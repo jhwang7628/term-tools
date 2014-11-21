@@ -333,3 +333,7 @@ let g:airline_powerline_fonts = 1
 "   let g:airline_symbols.paste = 'Þ'
 "   let g:airline_symbols.paste = '∥'
 "   let g:airline_symbols.whitespace = 'Ξ'
+"
+
+" clear background color 
+set t_ut=
