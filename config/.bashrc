@@ -134,3 +134,5 @@ source /opt/intel/composer_xe_2015.0.090/bin/iccvars.sh intel64
 
 export PATH=$PATH:/usr/local/cuda-6.5/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-6.5/lib64
+
+TERM=xterm-256color

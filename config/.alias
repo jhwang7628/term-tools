@@ -10,6 +10,7 @@ alias g++="g++ -std=c++11"
 
 # Error Message
 alias gvim="gvim 2>/dev/null"
+alias vim="/home/jw969/opt/vim/bin/vim"
 
 
 # General Settings 
