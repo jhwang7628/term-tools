@@ -21,5 +21,5 @@ echo "Backup old vim directory to $olddir"
 mv $HOME/.vim $olddir/
 echo "Creating symlink for vim directory at $HOME" 
 
-ln -sf $CONFIG_PATH/Dotfiles/vim-files/vim $HOME/.vim
+ln -sf $CONFIG_PATH/.vim $HOME/.vim
 
