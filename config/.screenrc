@@ -1,0 +1,34 @@
+# # Fix for residual text
+altscreen on
+# 
+# # custom statusbar
+hardstatus off
+hardstatus alwayslastline
+
+backtick 1 1 1 $HOME/bin/get_uptime
+backtick 2 1 1 $HOME/bin/get_cputemp 0
+backtick 3 1 1 $HOME/bin/get_freemem
+backtick 4 1 1 $HOME/bin/get_freeswap
+backtick 5 1 1 $HOME/bin/get_volume
+# hardstatus string '%{= kW}[ %{m}%H %{W}][%= %{= kw}%?%-Lw%?%{r}(%{g}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{W}][%{Y} %d/%m %{Y}%c %{W}]'
+hardstatus string '%{= kW}[ %{bW}Jui-Hsien@%H%{kW} %{W}][%= %{= kw}%?%-Lw%?%n*%f%t%?(%u)%?%{w}%?%+Lw%?%?%= %{W}][ %{g}%2`; %3`/%4`; %5` %{W}][%{Y} %d/%m %{Y}%c %{W}]'
+#
+
+
+# hardstatus string "%{.kc}%-w%{.kw}%n*%t%{-}%+w %= | %1` | %2`C | %3`/%4` | %5`% | %6`/%7` | %c %d/%m/%Y"
+
+# 
+# # Turn welcome message off
+startup_message off
+# 
+# # disable vbell (so wm urgency hints can work from within screen)
+vbell off
+# 
+# # Increase the scrollback buffer
+defscrollback 5000
+
+# 256 colour support for urxvt
+terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+# 
+term screen-256color

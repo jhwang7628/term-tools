@@ -1,0 +1,47 @@
+# ==== pythonstartup.py ====
+#
+# 
+
+# import commond commands
+import os
+
+
+# add something to clear the screen
+class clear(object):
+   def __repr__(self):
+      os.system('cls' if os.name == 'nt' else 'clear')
+      return ''
+
+clear = clear()
+
+
+# make exit a little bit easier
+class exit(object):
+   exit = exit # original object
+   def __repr__(self):
+      self.exit() # call original
+      return ''
+
+quit = exit = exit()
+
+
+# change the primary interpreter prompt from >>> to cwd+>>>
+class Prompt:
+   def __str__(self):
+      import getpass
+      oscwd=os.getcwd()
+      tmpIndex=oscwd.rfind('/')
+      unameoscwd = getpass.getuser()+":"+oscwd[tmpIndex+1:]
+      return '%s >>> ' % unameoscwd
+
+import sys
+sys.ps1 = Prompt()
+del sys
+del Prompt
+
+
+
+
+
+
+# ==== end pythonstartup.py ====

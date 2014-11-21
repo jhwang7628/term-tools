@@ -1,0 +1,2 @@
+#!/bin/bash
+amixer | head -5 | tail -1 | awk '{print $4}' | tr -d []
