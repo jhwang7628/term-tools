@@ -274,6 +274,9 @@ let g:tex_flavor='latex'
 
 let g:Imap_UsePlaceHolders = 0
 
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_MultipleCompileFormats='pdf'
+" let g:Tex_CompileRule_pdf
 
 " =========== vim-latex suite Settings ===========" 
 "
@@ -315,6 +318,14 @@ endif
 "
 
 let g:airline_powerline_fonts = 1
+
+
+set t_Co=16
+set background=dark
+colo solarized
+
+
+
 
 " if !exists('g:airline_symbols')
 "     let g:airline_symbols = {}
