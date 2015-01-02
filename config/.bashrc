@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -62,13 +62,42 @@ fi
 #     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 # fi
 
+# ANSI color codes
+RS="\[\033[0m\]"    # reset
+HC="\[\033[1m\]"    # hicolor
+UL="\[\033[4m\]"    # underline
+INV="\[\033[7m\]"   # inverse background and foreground
+FBLK="\[\033[30m\]" # foreground black
+FRED="\[\033[31m\]" # foreground red
+FGRN="\[\033[32m\]" # foreground green
+FYEL="\[\033[33m\]" # foreground yellow
+FBLE="\[\033[34m\]" # foreground blue
+FMAG="\[\033[35m\]" # foreground magenta
+FCYN="\[\033[36m\]" # foreground cyan
+FWHT="\[\033[37m\]" # foreground white
+BBLK="\[\033[40m\]" # background black
+BRED="\[\033[41m\]" # background red
+BGRN="\[\033[42m\]" # background green
+BYEL="\[\033[43m\]" # background yellow
+BBLE="\[\033[44m\]" # background blue
+BMAG="\[\033[45m\]" # background magenta
+BCYN="\[\033[46m\]" # background cyan
+BWHT="\[\033[47m\]" # background white
+
+LGRY="\[\033[1;38m\]"
+DGRY="\[\033[2;38m\]"
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+    # PS1="$DGRY${debian_chroot:+($debian_chroot)}\u:$LGRY\W$RS\\$ $RS"
+    PS1="\[\033[0;38m\]\u\[\033[0m\]:\[\033[0;37m\]\W\[\033[0m\]\$ \[\033[0m\]"
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u:\W\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-
-
+# if [ "$color_prompt" = yes ]; then
+#     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+# else
+#     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+# fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -134,3 +163,27 @@ source /opt/intel/composer_xe_2015.0.090/bin/iccvars.sh intel64
 
 export PATH=$PATH:/usr/local/cuda-6.5/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-6.5/lib64
+
+
+# Enables dircolors for solarized
+eval `dircolors ~/term-tools/config/.dircolors`
+/home/jui-hsien/term-tools/config/dircolors-solarized/gnome-terminal-colors-solarized/set_dark.sh
+
+source /opt/openfoam231/etc/bashrc
+
+# export TERM=xterm-256color
+
+
+# #!/bin/sh
+# DARK_BG='#000014141A1A'
+# # original: DARK_BG='#00002B2B3636'
+# LIGHTEST='#FFFFFBFBF0F0'
+# # # original: LIGHTEST='#FDFDF6F6E3E3'
+# #
+# gconftool-2 --set "/apps/gnome-terminal/profiles/Default/use_theme_background" --type bool false
+# gconftool-2 --set "/apps/gnome-terminal/profiles/Default/use_theme_colors" --type bool false
+# gconftool-2 --set "/apps/gnome-terminal/profiles/Default/palette" --type string "#070736364242:#D3D301010202:#858599990000:#B5B589890000:#26268B8BD2D2:#D3D336368282:#2A2AA1A19898:#EEEEE8E8D5D5:$DARK_BG:#CBCB4B4B1616:#58586E6E7575:#65657B7B8383:#838394949696:#6C6C7171C4C4:#9393A1A1A1A1:$LIGHTEST"
+# gconftool-2 --set "/apps/gnome-terminal/profiles/Default/background_color" --type string "$DARK_BG"
+# gconftool-2 --set "/apps/gnome-terminal/profiles/Default/foreground_color" --type string "#65657B7B8383"
+
+

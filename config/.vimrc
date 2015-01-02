@@ -324,9 +324,8 @@ set t_Co=16
 set background=dark
 colo solarized
 
-
-
-
+let g:airline#extensions#tmuxline#enabled = 0
+autocmd VimEnter * Tmuxline airline_insert 
 " if !exists('g:airline_symbols')
 "     let g:airline_symbols = {}
 "   endif

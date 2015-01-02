@@ -4,7 +4,7 @@ PWD=`pwd`
 CONFIG_PATH=$PWD/../config
 
 olddir=$HOME/dotfiles_old
-files=".alias .pythonstartup .vim .screenrc startup.m .tmux.conf .vimrc"
+files=".alias .pythonstartup .vim .screenrc startup.m .tmux.conf .vimrc .bashrc"
 
 echo "Creating $olddir for backup of any existing dotfiles in $HOME"
 mkdir $olddir
