@@ -48,3 +48,8 @@ alias cmake='/usr/local/bin/cmake'
 alias fluent15='export PATH=$PATH:$HOME/bin:/usr/local/ansys_inc/v150/fluent/bin:/usr/local/ansys_inc/v150/Framework/bin/Linux64' 
 
 alias open='nautilus'
+
+alias qmake='/opt/Qt5.3.1/5.3/gcc_64/bin/qmake'
+
+alias audacity=' LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/ audacity'
+

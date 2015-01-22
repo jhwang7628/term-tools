@@ -150,7 +150,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source $HOME/.alias
 
 export PYTHONSTARTUP=$HOME/.pythonstartup
 # export PATH=$PATH:$HOME/bin:/usr/local/ansys_inc/v150/fluent/bin:/usr/local/ansys_inc/v150/Framework/bin/Linux64
@@ -187,3 +186,4 @@ source /opt/openfoam231/etc/bashrc
 # gconftool-2 --set "/apps/gnome-terminal/profiles/Default/foreground_color" --type string "#65657B7B8383"
 
 
+source $HOME/.alias
