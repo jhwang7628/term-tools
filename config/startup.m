@@ -6,5 +6,21 @@ set(0,'defaultaxeslinewidth', 0.7, 'defaultlinelinewidth',2,'defaultpatchlinewid
 
 format long
 
-addpath('/home/jui-hsien/Research/AerodynamicSound/matlab')
 
+addpath('/home/jui-hsien/Research/AerodynamicSound/matlab')
+addpath('/media/jui-hsien/General/Research/code/TurbulentHead/tools/data2bin')
+addpath('/media/jui-hsien/General/Research/code/TurbulentHead/tools/GenerateSound')
+addpath('/media/jui-hsien/General/Research/code/TurbulentHead/tools/matlab_common')
+addpath('/home/jui-hsien/Research/code/TurbulentHead/tools/HRTFcat')
+addpath('/media/jui-hsien/General/Research/code/TurbulentHead/tools/rotate3')
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+disp('-----------------------'); 
+disp('Matlab startup.m loaded');
+disp('-----------------------'); 
+fprintf('\n');
+fprintf('\n');
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

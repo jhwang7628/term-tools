@@ -326,6 +326,11 @@ colo solarized
 
 let g:airline#extensions#tmuxline#enabled = 0
 autocmd VimEnter * Tmuxline airline_insert 
+autocmd VimEnter * SyntasticToggleMode 
+
+nmap <leader>sc :SyntasticCheck<CR>
+
+
 " if !exists('g:airline_symbols')
 "     let g:airline_symbols = {}
 "   endif
@@ -343,3 +348,7 @@ autocmd VimEnter * Tmuxline airline_insert
 "   let g:airline_symbols.paste = 'Þ'
 "   let g:airline_symbols.paste = '∥'
 "   let g:airline_symbols.whitespace = 'Ξ'
+
+syntax on 
+filetype on 
+au BufNewFile,BufRead * if &syntax == '' | set syntax=cpp | endif

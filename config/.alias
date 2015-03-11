@@ -39,8 +39,8 @@ alias runwb='sudo /ansys_inc/v150/Framework/bin/Linux64/runwb2'
 
 alias tmux='TERMINFO=/usr/share/terminfo/x/xterm-16color TERM=xterm-16color tmux -2'
 alias tmuxa='TERMINFO=/usr/share/terminfo/x/xterm-16color TERM=xterm-16color tmux -2 attach -t'
-
-alias tmux-ls='tmux list-session' 
+alias tmuxk='TERMINFO=/usr/share/terminfo/x/xterm-16color TERM=xterm-16color tmux kill-session -t'
+alias tmuxl='tmux list-session' 
 
 alias cmake='/usr/local/bin/cmake'
 # alias ccmake='/usr/local/bin/ccmake'
@@ -53,3 +53,9 @@ alias qmake='/opt/Qt5.3.1/5.3/gcc_64/bin/qmake'
 
 alias audacity=' LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/ audacity'
 
+
+alias workspace='export PATH=$PATH:/home/jui-hsien/Research/code/TurbulentHead/tools/sound_mapGL:/home/jui-hsien/Research/code/TurbulentHead/src:/home/jui-hsien/Research/code/TurbulentHead/src/FFTsource:/media/jui-hsien/Data2/turbsound_runfluid/scripts'
+
+
+# PDF annotator
+# okular
