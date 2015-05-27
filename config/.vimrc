@@ -291,6 +291,7 @@ au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
 
 set cul
 " Change the cursor shape when entering the insert mode
+
 if has("autocmd")
   au InsertEnter * set nocul
   au InsertLeave * set cul
@@ -349,6 +350,21 @@ nmap <leader>sc :SyntasticCheck<CR>
 "   let g:airline_symbols.paste = '∥'
 "   let g:airline_symbols.whitespace = 'Ξ'
 
-syntax on 
-filetype on 
-au BufNewFile,BufRead * if &syntax == '' | set syntax=cpp | endif
+" syntax on 
+" filetype on 
+" au BufNewFile,BufRead * if &syntax == '' | set syntax=cpp | endif
+
+
+" buffer screen updates instead of update all the time
+set lazyredraw
+
+" nmap <c-s> :w<CR>
+" imap <c-s> <Esc>:w<CR>a
+" unmap <C-S>
+" noremap <F3> <C-S>
+"
+
+
+" For swap files " 
+set backupdir=./.backup,.,/tmp
+set directory=.,./.backup,/tmp

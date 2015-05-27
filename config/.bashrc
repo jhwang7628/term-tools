@@ -187,3 +187,4 @@ source /opt/openfoam231/etc/bashrc
 
 
 source $HOME/.alias
+workspace

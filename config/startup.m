@@ -2,6 +2,7 @@ set(0,'defaultAxesFontName', 'Palatino')
 set(0,'defaultTextFontName', 'Palatino')
 set(0, 'DefaultTextFontSize', 14);
 set(0, 'DefaultAxesFontSize', 18);
+set(0, 'DefaultLineMarkerSize', 8); 
 set(0,'defaultaxeslinewidth', 0.7, 'defaultlinelinewidth',2,'defaultpatchlinewidth',0.7)
 
 format long
@@ -12,6 +13,7 @@ addpath('/media/jui-hsien/General/Research/code/TurbulentHead/tools/data2bin')
 addpath('/media/jui-hsien/General/Research/code/TurbulentHead/tools/GenerateSound')
 addpath('/media/jui-hsien/General/Research/code/TurbulentHead/tools/matlab_common')
 addpath('/home/jui-hsien/Research/code/TurbulentHead/tools/HRTFcat')
+addpath('/home/jui-hsien/Research/code/TurbulentHead/tools/IO')
 addpath('/media/jui-hsien/General/Research/code/TurbulentHead/tools/rotate3')
 
 
