@@ -35,7 +35,7 @@ alias sshclearpass="exec ssh-agent bash; ssh-add /home/jui-hsien/.ssh/id_rsa"
 
 alias mountMAEsoftware="sudo mount -t cifs -o username=jw969 //fs2.mae.cornell.edu/shared$/MAE/Software /media/mae_software"
 
-alias runwb='sudo /ansys_inc/v150/Framework/bin/Linux64/runwb2'
+# alias runwb='sudo /ansys_inc/v150/Framework/bin/Linux64/runwb2'
 
 # alias python='/usr/bin/python3'
 
@@ -56,7 +56,7 @@ alias qmake='/opt/Qt5.3.1/5.3/gcc_64/bin/qmake'
 alias audacity=' LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/ audacity'
 
 
-alias workspace='. ~/.workspace'
+# alias workspace='. ~/.workspace'
 
 
 # PDF annotator

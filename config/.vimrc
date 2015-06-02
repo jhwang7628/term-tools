@@ -292,13 +292,16 @@ au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
 set cul
 " Change the cursor shape when entering the insert mode
 
-if has("autocmd")
-  au InsertEnter * set nocul
-  au InsertLeave * set cul
-  au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-  au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-  au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-endif
+" if has("autocmd")
+"   au InsertEnter * set nocul
+"   au InsertLeave * set cul
+"   au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+"   au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+"   au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+" endif
+
+
+
 
 
 " leave insert mode quickly
@@ -368,3 +371,14 @@ set lazyredraw
 " For swap files " 
 set backupdir=./.backup,.,/tmp
 set directory=.,./.backup,/tmp
+
+
+
+" for Powerline fonts " 
+set guifont=Inconsolata\ for\ Powerline:h15
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8

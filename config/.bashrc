@@ -1,6 +1,14 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+ 
+echo "HELLO"
+ 
+# For macport #
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=$PATH:/usr/local/opt/coreutils/libexec/gnubin
+export MANPATH=/opt/local/share/man:$MANPATH
+
 
 # If not running interactively, don't do anything
 case $- in
@@ -110,7 +118,7 @@ xterm*|rxvt*)
 esac
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
+if [ -x /opt/local/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
@@ -158,17 +166,17 @@ export SIM=$HOME/Research/Ansys-run/HumanHead/Batch_control_dict/SimulationCases
 export BATCH=$HOME/Research/Ansys-run/HumanHead/Batch_control_dict
 export HH2=$HOME/Research/Ansys-run/HumanHead-2
 export PROJ=$HOME/Research/code/TurbulentHead
-source /opt/intel/composer_xe_2015.0.090/bin/iccvars.sh intel64
+# source /opt/intel/composer_xe_2015.0.090/bin/iccvars.sh intel64
 
 export PATH=$PATH:/usr/local/cuda-6.5/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-6.5/lib64
 
 
 # Enables dircolors for solarized
-eval `dircolors ~/term-tools/config/.dircolors`
-/home/jui-hsien/term-tools/config/dircolors-solarized/gnome-terminal-colors-solarized/set_dark.sh
+# eval `dircolors ~/Jui/Config_Linux/config/.dircolors`
+# /Users/intern/Jui/Config_Linux/config/dircolors-solarized/gnome-terminal-colors-solarized/set_dark.sh
 
-source /opt/openfoam231/etc/bashrc
+# source /opt/openfoam231/etc/bashrc
 
 # export TERM=xterm-256color
 
@@ -187,4 +195,9 @@ source /opt/openfoam231/etc/bashrc
 
 
 source $HOME/.alias
-workspace
+source ~/Jui/.workspace
+
+# For LSCOLORS #
+export CLICOLOR=1
+
+
