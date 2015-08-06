@@ -161,10 +161,11 @@ fi
 
 export PYTHONSTARTUP=${HOME}/.pythonstartup
 export PATH=${HOME}/opt/bin:${PATH}
-export INCLUDE=${HOME}/opt/include:${INCLUDE}
+# export INCLUDE=${HOME}/opt/include:${INCLUDE}
 export LD_LIBRARY_PATH=${HOME}/opt/lib:${LD_LIBRARY_PATH}
+# export LDFLAGS=${LDFLAGS}:-L${HOME}/opt/lib
 
-export LIBS=${LD_LIBRARY_PATH}
+# export LIBS=${LD_LIBRARY_PATH}
 
 
 ### Customize workspace 

@@ -5,7 +5,7 @@ alias of230='. /opt/openfoam231/etc/bashrc && source /opt/openfoam231/bin/tools/
 
 alias matlab='matlab -nodesktop -nosplash'
 
-alias g++="g++ -std=c++11"
+# alias g++="g++ -std=c++11"
 
 
 # Error Message
