@@ -37,7 +37,7 @@ set laststatus=2
 
 "set relativenumber
 set number
-set norelativenumber
+" set norelativenumber
 
 "set undofile
 set shell=/bin/bash

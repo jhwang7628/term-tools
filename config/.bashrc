@@ -121,6 +121,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# Enables dircolors for solarized
+TERM_TOOLS=${HOME}/term-tools
+eval `dircolors $TERM_TOOLS/config/.dircolors`
+# $TERM_TOOLS/config/dircolors-solarized/gnome-terminal-colors-solarized/set_dark.sh
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -151,18 +156,6 @@ if ! shopt -oq posix; then
 fi
 
 
-export PYTHONSTARTUP=$HOME/.pythonstartup
-# export PATH=$PATH:$HOME/bin:/usr/local/ansys_inc/v150/fluent/bin:/usr/local/ansys_inc/v150/Framework/bin/Linux64
-export PATH=$PATH:$HOME/bin
-export SIM=$HOME/Research/Ansys-run/HumanHead/Batch_control_dict/SimulationCases
-export BATCH=$HOME/Research/Ansys-run/HumanHead/Batch_control_dict
-export HH2=$HOME/Research/Ansys-run/HumanHead-2
-export PROJ=$HOME/Research/code/TurbulentHead
-source /opt/intel/composer_xe_2015.0.090/bin/iccvars.sh intel64
-
-export PATH=$PATH:/usr/local/cuda-6.5/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-6.5/lib64
-
 
 # Enables dircolors for solarized
 eval `dircolors ~/term-tools/config/.dircolors`
@@ -170,21 +163,17 @@ eval `dircolors ~/term-tools/config/.dircolors`
 
 source /opt/openfoam240/etc/bashrc
 
-# export TERM=xterm-256color
+export PYTHONSTARTUP=${HOME}/.pythonstartup
+export PATH=${HOME}/opt/bin:${PATH}
+# export INCLUDE=${HOME}/opt/include:${INCLUDE}
+export LD_LIBRARY_PATH=${HOME}/opt/lib:${LD_LIBRARY_PATH}
+# export LDFLAGS=${LDFLAGS}:-L${HOME}/opt/lib
+
+# export LIBS=${LD_LIBRARY_PATH}
 
 
-# #!/bin/sh
-# DARK_BG='#000014141A1A'
-# # original: DARK_BG='#00002B2B3636'
-# LIGHTEST='#FFFFFBFBF0F0'
-# # # original: LIGHTEST='#FDFDF6F6E3E3'
-# #
-# gconftool-2 --set "/apps/gnome-terminal/profiles/Default/use_theme_background" --type bool false
-# gconftool-2 --set "/apps/gnome-terminal/profiles/Default/use_theme_colors" --type bool false
-# gconftool-2 --set "/apps/gnome-terminal/profiles/Default/palette" --type string "#070736364242:#D3D301010202:#858599990000:#B5B589890000:#26268B8BD2D2:#D3D336368282:#2A2AA1A19898:#EEEEE8E8D5D5:$DARK_BG:#CBCB4B4B1616:#58586E6E7575:#65657B7B8383:#838394949696:#6C6C7171C4C4:#9393A1A1A1A1:$LIGHTEST"
-# gconftool-2 --set "/apps/gnome-terminal/profiles/Default/background_color" --type string "$DARK_BG"
-# gconftool-2 --set "/apps/gnome-terminal/profiles/Default/foreground_color" --type string "#65657B7B8383"
-
-
+### Customize workspace 
 source $HOME/.alias
-workspace
+if [ -f ${HOME}/.workspace ]; then 
+    source ${HOME}/.workspace
+fi
