@@ -157,7 +157,11 @@ fi
 
 
 
-### Setup environment variables
+# Enables dircolors for solarized
+eval `dircolors ~/term-tools/config/.dircolors`
+/home/jui-hsien/term-tools/config/dircolors-solarized/gnome-terminal-colors-solarized/set_dark.sh
+
+source /opt/openfoam240/etc/bashrc
 
 export PYTHONSTARTUP=${HOME}/.pythonstartup
 export PATH=${HOME}/opt/bin:${PATH}
