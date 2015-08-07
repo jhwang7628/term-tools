@@ -369,9 +369,9 @@ set lazyredraw
 " set backupdir=./.backup,.,/tmp
 " set directory=.,./.backup,/tmp
 
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
-set undodir=~/.vim/undo//
+set backupdir=~/.vim/backup/
+set directory=~/.vim/swap/
+set undodir=~/.vim/undo/
 
 autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=cpp | endif  
   
