@@ -168,7 +168,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-6.5/lib64
 eval `dircolors ~/term-tools/config/.dircolors`
 /home/jui-hsien/term-tools/config/dircolors-solarized/gnome-terminal-colors-solarized/set_dark.sh
 
-source /opt/openfoam231/etc/bashrc
+source /opt/openfoam240/etc/bashrc
 
 # export TERM=xterm-256color
 
