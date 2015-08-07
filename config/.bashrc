@@ -89,7 +89,7 @@ DGRY="\[\033[2;38m\]"
 
 if [ "$color_prompt" = yes ]; then
     # PS1="$DGRY${debian_chroot:+($debian_chroot)}\u:$LGRY\W$RS\\$ $RS"
-    PS1="\[\033[0;38m\]\u\[\033[0m\]:\[\033[0;37m\]\W\[\033[0m\]\$ \[\033[0m\]"
+    PS1="$FRED\u\[\033[0m\]$RS@$HC$FRED\h$RS:\[\033[0;37m\]\W\[\033[0m\]\$ \[\033[0m\]"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -168,8 +168,36 @@ export LD_LIBRARY_PATH=${HOME}/opt/lib:${LD_LIBRARY_PATH}
 # export LIBS=${LD_LIBRARY_PATH}
 
 
+export TMPDIR=${HOME}/.tmp
+
+
 ### Customize workspace 
 source $HOME/.alias
 if [ -f ${HOME}/.workspace ]; then 
     source ${HOME}/.workspace
+fi
+
+
+### bitbucket 
+
+SSH_ENV=$HOME/.ssh/environment
+   
+# start the ssh-agent
+function start_agent {
+    echo "Initializing new SSH agent..."
+    # spawn ssh-agent
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    /usr/bin/ssh-add
+}
+   
+if [ -f "${SSH_ENV}" ]; then
+     . "${SSH_ENV}" > /dev/null
+     ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+    }
+else
+    start_agent;
 fi

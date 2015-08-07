@@ -1,7 +1,7 @@
 alias hello='echo "hello world"'
 
 alias blender="blender 2>/dev/null"
-alias of230='. /opt/openfoam231/etc/bashrc && source /opt/openfoam231/bin/tools/RunFunctions'
+alias of240='source $HOME/opt/src/OpenFOAM/OpenFOAM-2.4.0/etc/bashrc WM_NCOMPPROCS=32 foamCompiler=ThirdParty WM_COMPILER=Gcc48 WM_MPLIB=SYSTEMOPENMPI'
 
 alias matlab='matlab -nodesktop -nosplash'
 
@@ -42,6 +42,8 @@ alias sshclearpass="exec ssh-agent bash; ssh-add /home/jui-hsien/.ssh/id_rsa"
 alias tmuxa="tmux -2 attach -t"
 alias tmuxk="tmux kill-session -t"
 alias tmuxl="tmux list-session" 
+
+## HINT: to see all tmux session (not owned), use `pgrep tmux`, and `/proc/$ID/exe attach`
 
 alias cmake='/usr/local/bin/cmake'
 # alias ccmake='/usr/local/bin/ccmake'
