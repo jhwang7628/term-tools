@@ -167,7 +167,15 @@ export LD_LIBRARY_PATH=${HOME}/opt/lib:${LD_LIBRARY_PATH}
 # export LIBS=${LD_LIBRARY_PATH}
 
 
-export TMPDIR=${HOME}/.tmp
+### setup tmp dir
+if [ ! -d ${LOCAL_SCRATCH}/.tmp ]; then
+    mkdir -p ${LOCAL_SCRATCH}/.tmp
+fi
+export TMPDIR=${LOCAL_SCRATCH}/.tmp
+if [ ! -d ${HOME}/.tmp ]; then
+    mkdir -p ${HOME}/.tmp
+fi
+export TMUX_TMPDIR=${HOME}/.tmp
 
 
 ### Customize workspace 
@@ -176,27 +184,28 @@ if [ -f ${HOME}/.workspace ]; then
     source ${HOME}/.workspace
 fi
 
+module load openmpi/1.8.7/gcc
 
 ### bitbucket 
 
-SSH_ENV=$HOME/.ssh/environment
-   
-# start the ssh-agent
-function start_agent {
-    echo "Initializing new SSH agent..."
-    # spawn ssh-agent
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-    echo succeeded
-    chmod 600 "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add
-}
-   
-if [ -f "${SSH_ENV}" ]; then
-     . "${SSH_ENV}" > /dev/null
-     ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-        start_agent;
-    }
-else
-    start_agent;
-fi
+# SSH_ENV=$HOME/.ssh/environment
+#    
+# # start the ssh-agent
+# function start_agent {
+#     echo "Initializing new SSH agent..."
+#     # spawn ssh-agent
+#     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+#     echo succeeded
+#     chmod 600 "${SSH_ENV}"
+#     . "${SSH_ENV}" > /dev/null
+#     /usr/bin/ssh-add
+# }
+#    
+# if [ -f "${SSH_ENV}" ]; then
+#      . "${SSH_ENV}" > /dev/null
+#      ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+#         start_agent;
+#     }
+# else
+#     start_agent;
+# fi
