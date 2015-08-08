@@ -1,14 +1,17 @@
 #/bin/bash
 
 PWD=`pwd` 
+ROOT_DIR=$PWD/..
 CONFIG_PATH=$PWD/../config
 
-olddir=$HOME/dotfiles_old
+olddir=$ROOT_DIR/dotfiles_old
 files=".alias .pythonstartup .vim .screenrc startup.m .tmux.conf .vimrc .bashrc"
 
-echo "Creating $olddir for backup of any existing dotfiles in $HOME"
-mkdir $olddir
-echo "...done"
+if [ ! -d $olddir ]; then
+    echo "Creating $olddir for backup of any existing dotfiles in $HOME"
+    mkdir $olddir
+    echo "...done"
+fi
 
 echo "Moving any existing dotfiles for $HOME to $olddir" 
 for file in $files; do
