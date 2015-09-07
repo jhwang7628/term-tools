@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PWD=`pwd`
-DST_DIR=${HOME}/opt
+# DST_DIR=${HOME}/opt
 
 if [ ! -d ../package ]; then
     mkdir ../package
@@ -14,9 +14,9 @@ hg clone https://vim.googlecode.com/hg/ vim
 
 cd vim
 
-./configure --prefix=${DST_DIR}
+./configure # --prefix=${DST_DIR}
 make
-make install
+sudo make install
 
 
 cd ${PWD}
