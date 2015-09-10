@@ -331,6 +331,10 @@ autocmd VimEnter * SyntasticToggleMode
 
 nmap <leader>sc :SyntasticCheck<CR>
 
+nmap <C-A> <Nop>
+nmap <C-S> <Nop>
+nmap <C-X> <Nop>
+
 
 " if !exists('g:airline_symbols')
 "     let g:airline_symbols = {}
