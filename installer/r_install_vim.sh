@@ -18,5 +18,7 @@ cd vim
 make
 sudo make install
 
+# for window swap developed by wesQ3 and sgriffin ( https://github.com/wesQ3/vim-windowswap; http://stackoverflow.com/questions/2586984/how-can-i-swap-positions-of-two-open-files-in-splits-in-vim )
+git clone https://github.com/wesQ3/vim-windowswap ~/.vim/bundle/vim-windowswap 
 
 cd ${PWD}
