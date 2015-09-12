@@ -184,6 +184,9 @@ if [ -f ${HOME}/.workspace ]; then
     source ${HOME}/.workspace
 fi
 
+### git 
+git config --global core.excludesfile ~/.gitignore_global
+
 ### bitbucket 
 
 # SSH_ENV=$HOME/.ssh/environment
