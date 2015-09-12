@@ -5,7 +5,7 @@ ROOT_DIR=$PWD/..
 CONFIG_PATH=$PWD/../config
 
 olddir=$ROOT_DIR/dotfiles_old
-files=".alias .pythonstartup .vim .screenrc startup.m .tmux.conf .vimrc .bashrc"
+files=".alias .pythonstartup .vim .screenrc startup.m .tmux.conf .vimrc .bashrc .gitignore_global"
 
 if [ ! -d $olddir ]; then
     echo "Creating $olddir for backup of any existing dotfiles in $HOME"

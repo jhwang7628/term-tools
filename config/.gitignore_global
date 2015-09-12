@@ -1,0 +1,12 @@
+*.sw[opn]
+.*.sw[opn]
+
+*.[oa]
+
+*.blg
+*.bbl
+*.aux
+
+*.pdf
+
+.directory
