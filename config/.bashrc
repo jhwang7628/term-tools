@@ -166,12 +166,13 @@ export LD_LIBRARY_PATH=${HOME}/opt/lib:${LD_LIBRARY_PATH}
 
 # export LIBS=${LD_LIBRARY_PATH}
 
+# unset TMPDIR
+# ### setup tmp dir
+# if [ ! -d ${LOCAL_SCRATCH}/.tmp ]; then
+#     mkdir -p ${LOCAL_SCRATCH}/.tmp
+# fi
+# export TMPDIR=${LOCAL_SCRATCH}/.tmp
 
-### setup tmp dir
-if [ ! -d ${LOCAL_SCRATCH}/.tmp ]; then
-    mkdir -p ${LOCAL_SCRATCH}/.tmp
-fi
-export TMPDIR=${LOCAL_SCRATCH}/.tmp
 if [ ! -d ${HOME}/.tmp ]; then
     mkdir -p ${HOME}/.tmp
 fi

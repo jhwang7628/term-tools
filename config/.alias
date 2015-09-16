@@ -45,7 +45,7 @@ alias tmuxl="tmux list-session"
 
 ## HINT: to see all tmux session (not owned), use `pgrep tmux`, and `/proc/$ID/exe attach`
 
-alias cmake='/usr/local/bin/cmake'
+# alias cmake='/usr/local/bin/cmake'
 # alias ccmake='/usr/local/bin/ccmake'
 
 alias fluent15='export PATH=$PATH:$HOME/bin:/usr/local/ansys_inc/v150/fluent/bin:/usr/local/ansys_inc/v150/Framework/bin/Linux64' 
