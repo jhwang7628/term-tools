@@ -157,11 +157,11 @@ fi
 
 
 
-
 export PYTHONSTARTUP=${HOME}/.pythonstartup
+export PYTHONPATH=${HOME}/opt/lib/python2.7/lib/python:$PYTHONPATH
 export PATH=${HOME}/opt/bin:/usr/local/cuda-7.5/bin:${PATH}
 # export INCLUDE=${HOME}/opt/include:${INCLUDE}
-export LD_LIBRARY_PATH=${HOME}/opt/libs:/usr/local/cuda-6.5/lib64:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=${HOME}/opt/lib:/usr/local/cuda-6.5/lib64:${LD_LIBRARY_PATH}
 # export LDFLAGS=${LDFLAGS}:-L${HOME}/opt/lib
 
 # export LIBS=${LD_LIBRARY_PATH}
