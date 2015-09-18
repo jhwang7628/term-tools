@@ -1,7 +1,7 @@
 alias hello='echo "hello world"'
 
 alias blender="blender 2>/dev/null"
-alias of240='source /opt/openfoam240/etc/bashrc; source /opt/openfoam240/bin/tools/RunFunctions'
+alias of240='source $HOME/opt/src/OpenFOAM/OpenFOAM-2.4.0/etc/bashrc WM_NCOMPPROCS=32 foamCompiler=ThirdParty WM_COMPILER=Gcc48 WM_MPLIB=SYSTEMOPENMPI; source $HOME/opt/src/OpenFOAM/OpenFOAM-2.4.0/bin/tools/RunFunctions' 
 
 alias matlab='matlab -nodesktop -nosplash'
 
