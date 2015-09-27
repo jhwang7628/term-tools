@@ -157,26 +157,27 @@ fi
 
 
 
-
 export PYTHONSTARTUP=${HOME}/.pythonstartup
+export PYTHONPATH=${HOME}/opt/lib/python2.7/lib/python:$PYTHONPATH
 export PATH=${HOME}/opt/bin:/usr/local/cuda-7.5/bin:${PATH}
 export CPLUS_INCLUDE_PATH=${HOME}/opt/include:${CPLUS_INCLUDE_PATH}
 # export INCLUDE=${HOME}/opt/include:${INCLUDE}
-export LD_LIBRARY_PATH=${HOME}/opt/libs:/usr/local/cuda-6.5/lib64:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=${HOME}/opt/lib:/usr/local/cuda-6.5/lib64:${LD_LIBRARY_PATH}
 # export LDFLAGS=${LDFLAGS}:-L${HOME}/opt/lib
 
 # export LIBS=${LD_LIBRARY_PATH}
 
-
-### setup tmp dir
+# unset TMPDIR
+# ### setup tmp dir
 # if [ ! -d ${LOCAL_SCRATCH}/.tmp ]; then
 #     mkdir -p ${LOCAL_SCRATCH}/.tmp
 # fi
 # export TMPDIR=${LOCAL_SCRATCH}/.tmp
-# if [ ! -d ${HOME}/.tmp ]; then
-#     mkdir -p ${HOME}/.tmp
-# fi
-# export TMUX_TMPDIR=${HOME}/.tmp
+
+if [ ! -d ${HOME}/.tmp ]; then
+    mkdir -p ${HOME}/.tmp
+fi
+export TMUX_TMPDIR=${HOME}/.tmp
 
 
 ### Customize workspace 
