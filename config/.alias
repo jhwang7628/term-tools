@@ -63,7 +63,7 @@ alias audacity=' LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/ audacity'
 
 alias workspace='. ~/.workspace'
 
-alias useqt4='export QTCHOOSER_RUNTOOL=qtconfig; export QT_SELECT=4'
+alias useqt4='QT_SELECT=4'
 
 
 # PDF annotator
