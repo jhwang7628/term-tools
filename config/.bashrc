@@ -160,6 +160,7 @@ fi
 
 export PYTHONSTARTUP=${HOME}/.pythonstartup
 export PATH=${HOME}/opt/bin:/usr/local/cuda-7.5/bin:${PATH}
+export CPLUS_INCLUDE_PATH=${HOME}/opt/include:${CPLUS_INCLUDE_PATH}
 # export INCLUDE=${HOME}/opt/include:${INCLUDE}
 export LD_LIBRARY_PATH=${HOME}/opt/libs:/usr/local/cuda-6.5/lib64:${LD_LIBRARY_PATH}
 # export LDFLAGS=${LDFLAGS}:-L${HOME}/opt/lib
