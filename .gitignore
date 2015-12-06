@@ -1,2 +1,6 @@
-*.swp
-*.swo
+package
+
+config/.vim/swap
+config/.vim/backup
+config/.vim/undo
+

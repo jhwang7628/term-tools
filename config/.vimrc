@@ -37,7 +37,7 @@ set laststatus=2
 
 "set relativenumber
 set number
-set norelativenumber
+" set norelativenumber
 
 "set undofile
 set shell=/bin/bash
@@ -334,6 +334,10 @@ autocmd VimEnter * SyntasticToggleMode
 
 nmap <leader>sc :SyntasticCheck<CR>
 
+nmap <C-A> <Nop>
+nmap <C-S> <Nop>
+nmap <C-X> <Nop>
+
 
 " if !exists('g:airline_symbols')
 "     let g:airline_symbols = {}
@@ -372,8 +376,6 @@ set lazyredraw
 set backupdir=./.backup,.,/tmp
 set directory=.,./.backup,/tmp
 
-
-
 " for Powerline fonts " 
 set guifont=Inconsolata\ for\ Powerline:h15
 let g:Powerline_symbols = 'fancy'
@@ -382,3 +384,13 @@ set t_Co=256
 set fillchars+=stl:\ ,stlnc:\
 set term=xterm-256color
 set termencoding=utf-8
+
+autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=cpp | endif  
+
+"if exists('$TMUX')
+"    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+"    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+"else
+"    let &t_SI = "\e[5 q"
+"    let &t_EI = "\e[2 q"
+"endif
