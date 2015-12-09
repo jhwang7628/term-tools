@@ -212,3 +212,11 @@ git config --global core.excludesfile ~/.gitignore_global
 # else
 #     start_agent;
 # fi
+ 
+# resolve ALSA underrun problem 
+export PULSE_LATENCY_MSEC=60
+
+if [ -d /usr/local/jdk ]; then 
+    export JAVA_HOME=/usr/local/jdk
+    export PATH=${JAVA_HOME}/bin:${PATH}
+fi 

@@ -387,3 +387,4 @@ autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=cpp | endif
 "    let &t_EI = "\e[2 q"
 "endif
 
+
