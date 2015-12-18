@@ -50,3 +50,7 @@ Thumbs.db
 *.bbl
 *.aux
 *.pdf
+
+
+# Python #
+*.pyc

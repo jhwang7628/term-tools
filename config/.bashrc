@@ -162,7 +162,8 @@ export PYTHONPATH=${HOME}/opt/lib/python2.7/lib/python:$PYTHONPATH
 export PATH=${HOME}/opt/bin:/usr/local/cuda-7.5/bin:${PATH}
 export CPLUS_INCLUDE_PATH=${HOME}/opt/include:${CPLUS_INCLUDE_PATH}
 # export INCLUDE=${HOME}/opt/include:${INCLUDE}
-export LD_LIBRARY_PATH=${HOME}/opt/lib:/usr/local/cuda-6.5/lib64:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=${HOME}/opt/lib:/usr/lo${HOME}/opt/eigen:cal/cuda-6.5/lib64:${LD_LIBRARY_PATH}
+export LIBRARY_PATH=${HOME}/opt/lib:${LIBRARY_PATH}
 # export LDFLAGS=${LDFLAGS}:-L${HOME}/opt/lib
 
 # export LIBS=${LD_LIBRARY_PATH}
