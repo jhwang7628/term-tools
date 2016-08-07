@@ -1,70 +1,12 @@
-alias hello='echo "hello world"'
-
-alias blender="blender 2>/dev/null"
-alias of240='source $HOME/opt/src/OpenFOAM/OpenFOAM-2.4.0/etc/bashrc WM_NCOMPPROCS=32 foamCompiler=ThirdParty WM_COMPILER=Gcc48 WM_MPLIB=SYSTEMOPENMPI; source $HOME/opt/src/OpenFOAM/OpenFOAM-2.4.0/bin/tools/RunFunctions' 
-
-alias matlab='matlab -nodesktop -nosplash'
-
-# alias g++="g++ -std=c++11"
-
-
-# Error Message
-alias gvim="gvim 2>/dev/null"
-
-
-# General Settings 
-alias open="gnome-open"
-
-
-# Internet Connection
-alias ssh="ssh -X"
-
-alias ssh100="ssh -X jw969@hydra100.cs.cornell.edu"
-alias ssh101="ssh -X jw969@hydra101.cs.cornell.edu"
-alias ssh102="ssh -X jw969@hydra102.cs.cornell.edu"
-alias ssh103="ssh -X jw969@hydra103.cs.cornell.edu"
-alias ssh104="ssh -X jw969@hydra104.cs.cornell.edu"
-alias ssh105="ssh -X jw969@hydra105.cs.cornell.edu"
-alias ssh106="ssh -X jw969@hydra106.cs.cornell.edu"
-alias ssh107="ssh -X jw969@hydra107.cs.cornell.edu"
-alias ssh108="ssh -X jw969@hydra108.cs.cornell.edu"
-alias ssh109="ssh -X jw969@hydra109.cs.cornell.edu"
-
-alias sshclearpass="exec ssh-agent bash; ssh-add /home/jui-hsien/.ssh/id_rsa"
-
-# alias python='/usr/bin/python3'
-
-# alias tmux= "TERMINFO=/usr/share/terminfo/x/xterm-16color TERM=xterm-16color tmux -2"
-# alias tmuxa="TERMINFO=/usr/share/terminfo/x/xterm-16color TERM=xterm-16color tmux -2 attach -t"
-# alias tmuxk="TERMINFO=/usr/share/terminfo/x/xterm-16color TERM=xterm-16color tmux kill-session -t"
-# alias tmuxl="tmux list-session" 
-# alias tmux= "TERM=konsole-16color tmux -2"
-# alias tmuxa="TERM=konsole-16color tmux -2 attach -t"
-# alias tmuxk="TERM=konsole-16color tmux kill-session -t"
-# alias tmuxl="TERM=konsole-16color tmux list-session" 
+## tmux
 alias tmux="tmux -2"
 alias tmuxa="tmux -2 attach -t"
 alias tmuxk="tmux kill-session -t"
 alias tmuxl="tmux list-session" 
 
-## HINT: to see all tmux session (not owned), use `pgrep tmux`, and `/proc/$ID/exe attach`
-
-# alias cmake='/usr/local/bin/cmake'
-# alias ccmake='/usr/local/bin/ccmake'
-
+## applications
+alias of240='source $HOME/opt/src/OpenFOAM/OpenFOAM-2.4.0/etc/bashrc WM_NCOMPPROCS=32 foamCompiler=ThirdParty WM_COMPILER=Gcc48 WM_MPLIB=SYSTEMOPENMPI; source $HOME/opt/src/OpenFOAM/OpenFOAM-2.4.0/bin/tools/RunFunctions' 
 alias fluent15='export PATH=$PATH:$HOME/bin:/usr/local/ansys_inc/v150/fluent/bin:/usr/local/ansys_inc/v150/Framework/bin/Linux64' 
+alias blender="blender 2>/dev/null"
+alias matlab='matlab -nodesktop -nosplash'
 
-alias open='nautilus'
-
-# alias qmake='/opt/Qt5.3.1/5.3/gcc_64/bin/qmake'
-
-alias audacity=' LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/ audacity'
-
-
-alias workspace='. ~/.workspace'
-
-alias useqt4='export QT_SELECT=qt4'
-
-
-# PDF annotator
-# okular
