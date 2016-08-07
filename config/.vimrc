@@ -393,3 +393,26 @@ set cino=g4,h4,i0
 
 "set syntax=on
 
+"========= Enable Vundle ==========
+" For reference see StackExchange: 
+"  http://vi.stackexchange.com/questions/388/what-is-the-difference-between-the-vim-package-managers
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" more Plugin commands
+" ...
+call vundle#end()            " required
+filetype plugin indent on    " required
+"========= END Enable Vundle ==========
+
+"========= Vim Plug-ins managed by Vundle ==========
+Plugin 'tpope/vim-fugitive'
+"========= END Vim Plug-ins managed by Vundle ==========
+
