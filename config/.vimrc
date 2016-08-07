@@ -75,6 +75,10 @@ set hlsearch
 nnoremap <leader><space> :noh<cr>
 "nnoremap <tab> %
 "vnoremap <tab> %
+"
+" short cut for removing trailing white spaces using <F5>
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>                   
+
 
 " Settings for use of the system's clipboard
 vnoremap <C-c> "+y
@@ -288,6 +292,7 @@ let g:Tex_MultipleCompileFormats='pdf'
 " ========== automatic syntaxing ============= " 
 " for glsl
 au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl 
+au BufRead,BufNewFile Makefile setfiletype make
 
 set cul
 " Change the cursor shape when entering the insert mode
@@ -295,9 +300,6 @@ set cul
 if has("autocmd")
   au InsertEnter * set nocul
   au InsertLeave * set cul
-  au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-  au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-  au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 endif
 
 
@@ -354,8 +356,6 @@ nmap <C-X> <Nop>
 "   let g:airline_symbols.paste = '∥'
 "   let g:airline_symbols.whitespace = 'Ξ'
 
-" syntax on 
-" filetype on 
 " au BufNewFile,BufRead * if &syntax == '' | set syntax=cpp | endif
 
 
@@ -377,7 +377,11 @@ set backupdir=~/.vim/backup/
 set directory=~/.vim/swap/
 set undodir=~/.vim/undo/
 
-autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=cpp | endif  
+" for constructor indentation " 
+" ref: http://stackoverflow.com/questions/2288678/vim-indentation-in-c-constructor-initialization-list
+set cino=g4,h4,i0
+
+"autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=cpp | endif  
 
 "if exists('$TMUX')
 "    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -387,4 +391,5 @@ autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=cpp | endif
 "    let &t_EI = "\e[2 q"
 "endif
 
+"set syntax=on
 
