@@ -50,7 +50,7 @@ ZSH_THEME="blinks"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git cp pj rand-quote)
+plugins=(git cp pj rand-quote history-substring-search)
 
 ## for pj plug-in, reference see:
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/pj/pj.plugin.zsh
@@ -81,7 +81,6 @@ source $ZSH/oh-my-zsh.sh
 source ${HOME}/.alias
 if [ -f ${HOME}/.workspace ]; then 
     source ${HOME}/.workspace
-    quote
 fi
 
 ## git config

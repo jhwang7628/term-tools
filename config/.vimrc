@@ -414,5 +414,6 @@ filetype plugin indent on    " required
 
 "========= Vim Plug-ins managed by Vundle ==========
 Plugin 'tpope/vim-fugitive'
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 "========= END Vim Plug-ins managed by Vundle ==========
 
