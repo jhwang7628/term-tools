@@ -417,3 +417,9 @@ Plugin 'tpope/vim-fugitive'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 "========= END Vim Plug-ins managed by Vundle ==========
 
+" CtrlP speed up:
+" http://stackoverflow.com/questions/21346068/slow-performance-on-ctrlp-it-doesnt-work-to-ignore-some-folders
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
