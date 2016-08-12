@@ -68,7 +68,7 @@ Uuid={c8aba2d8-8738-47b0-a20c-38fd188008d5}
 [Data_1_3]
 Comment=Comment
 Enabled=true
-Name=finder
+Name=open favorite folder
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_3Actions]
@@ -87,9 +87,9 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_3Triggers0]
-Key=Launch (9)
+Key=Favorites
 Type=SHORTCUT
-Uuid={d69a5167-3b01-4926-897e-bc13c2cf18ab}
+Uuid={ef8c845d-673f-43bc-bbc9-69129c3c52ac}
 
 [Main]
 AllowMerge=false
