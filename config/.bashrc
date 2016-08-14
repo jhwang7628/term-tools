@@ -2,8 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
  
-echo "HELLO"
- 
 # For macport #
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$PATH:/usr/local/opt/coreutils/libexec/gnubin
@@ -127,11 +125,14 @@ if [ -x /opt/local/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+
+    TERM_TOOLS=${HOME}/term-tools
+    eval `dircolors $TERM_TOOLS/config/.dircolors`
+else ## on mac?
+    export CLICOLOR=YES
 fi
 
 # Enables dircolors for solarized
-TERM_TOOLS=${HOME}/term-tools
-eval `dircolors $TERM_TOOLS/config/.dircolors`
 # $TERM_TOOLS/config/dircolors-solarized/gnome-terminal-colors-solarized/set_dark.sh
 
 # some more ls aliases
@@ -175,8 +176,12 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-6.5/lib64
 if [ ! -d ${HOME}/.tmp ]; then
     mkdir -p ${HOME}/.tmp
 fi
-export TMUX_TMPDIR=${HOME}/.tmp
 
+# export it so vimrc can fetch this environment variable
+if [ ! -z ${TMUX} ]; then
+    export USE_TMUX=1
+    export TMUX_TMPDIR=${HOME}/.tmp
+fi
 
 ### Customize workspace 
 source $HOME/.alias

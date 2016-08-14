@@ -276,14 +276,14 @@ let g:Imap_UsePlaceHolders = 0
 
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='pdf'
-" let g:Tex_CompileRule_pdf
 
-" =========== vim-latex suite Settings ===========" 
-"
-"
-"
-"
-"
+let g:tex_flavor='latex'
+let g:Tex_TreatMacViewerAsUNIX = 1
+let g:Tex_ExecuteUNIXViewerInForeground = 1
+let g:Tex_ViewRule_ps = 'open -a Preview'
+let g:Tex_ViewRule_pdf = 'open -a Preview'
+let g:Tex_ViewRule_dvi = 'open -a Preview'
+" let g:Tex_CompileRule_pdf
 "
 " ========== automatic syntaxing ============= " 
 " for glsl
@@ -328,9 +328,11 @@ set t_Co=16
 set background=dark
 colo solarized
 
-let g:airline#extensions#tmuxline#enabled = 0
-autocmd VimEnter * Tmuxline airline_insert 
-autocmd VimEnter * SyntasticToggleMode 
+if $USE_TMUX == 1 
+    let g:airline#extensions#tmuxline#enabled = 0
+    autocmd VimEnter * Tmuxline airline_insert 
+    autocmd VimEnter * SyntasticToggleMode 
+endif
 
 nmap <leader>sc :SyntasticCheck<CR>
 
@@ -387,6 +389,7 @@ set termencoding=utf-8
 
 autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=cpp | endif  
 
+
 "if exists('$TMUX')
 "    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 "    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
@@ -394,3 +397,7 @@ autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=cpp | endif
 "    let &t_SI = "\e[5 q"
 "    let &t_EI = "\e[2 q"
 "endif
+
+" for constructor indentation "
+" ref: http://stackoverflow.com/questions/2288678/vim-indentation-in-c-constructor-initialization-list
+set cino=g4,h4,i0
