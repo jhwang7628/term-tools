@@ -129,7 +129,7 @@ if [ -x /opt/local/bin/dircolors ]; then
     TERM_TOOLS=${HOME}/term-tools
     eval `dircolors $TERM_TOOLS/config/.dircolors`
 else ## on mac?
-    export CLICOLOR=YES
+    export CLICOLOR=1
 fi
 
 # Enables dircolors for solarized
