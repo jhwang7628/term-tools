@@ -164,15 +164,23 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export PYTHONSTARTUP=${HOME}/.pythonstartup
+export PYTHONPATH=${HOME}/opt/lib/python2.7/lib/python:$PYTHONPATH
+export PATH=${HOME}/bin:${HOME}/opt/bin:/usr/local/cuda-7.5/bin:${PATH}
+export CPLUS_INCLUDE_PATH=${HOME}/opt/include:${CPLUS_INCLUDE_PATH}
+# export INCLUDE=${HOME}/opt/include:${INCLUDE}
+export LD_LIBRARY_PATH=${HOME}/opt/lib:${HOME}/opt/eigen:/usr/local/cuda-6.5/lib64:/usr/local/lib:${LD_LIBRARY_PATH}
+export LIBRARY_PATH=${HOME}/opt/lib:/usr/local/lib:${LIBRARY_PATH}
+# export LDFLAGS=${LDFLAGS}:-L${HOME}/opt/lib
 
-export PYTHONSTARTUP=$HOME/.pythonstartup
-export PATH=$PATH:$HOME/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-6.5/lib64
+# export LIBS=${LD_LIBRARY_PATH}
 
-# Enables dircolors for solarized
-# eval `dircolors ~/Jui/Config_Linux/config/.dircolors`
-# /Users/intern/Jui/Config_Linux/config/dircolors-solarized/gnome-terminal-colors-solarized/set_dark.sh
-
+# unset TMPDIR
+# ### setup tmp dir
+# if [ ! -d ${LOCAL_SCRATCH}/.tmp ]; then
+#     mkdir -p ${LOCAL_SCRATCH}/.tmp
+# fi
+# export TMPDIR=${LOCAL_SCRATCH}/.tmp
 if [ ! -d ${HOME}/.tmp ]; then
     mkdir -p ${HOME}/.tmp
 fi
@@ -194,3 +202,37 @@ if [ -f ${HOME}/.workspace ]; then
     source ${HOME}/.workspace
 fi
 
+### git 
+git config --global core.excludesfile ~/.gitignore_global
+
+### bitbucket 
+
+# SSH_ENV=$HOME/.ssh/environment
+#    
+# # start the ssh-agent
+# function start_agent {
+#     echo "Initializing new SSH agent..."
+#     # spawn ssh-agent
+#     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+#     echo succeeded
+#     chmod 600 "${SSH_ENV}"
+#     . "${SSH_ENV}" > /dev/null
+#     /usr/bin/ssh-add
+# }
+#    
+# if [ -f "${SSH_ENV}" ]; then
+#      . "${SSH_ENV}" > /dev/null
+#      ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+#         start_agent;
+#     }
+# else
+#     start_agent;
+# fi
+ 
+# resolve ALSA underrun problem 
+export PULSE_LATENCY_MSEC=60
+
+if [ -d /usr/local/jdk ]; then 
+    export JAVA_HOME=/usr/local/jdk
+    export PATH=${JAVA_HOME}/bin:${PATH}
+fi 

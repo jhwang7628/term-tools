@@ -75,6 +75,10 @@ set hlsearch
 nnoremap <leader><space> :noh<cr>
 "nnoremap <tab> %
 "vnoremap <tab> %
+"
+" short cut for removing trailing white spaces using <F5>
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>                   
+
 
 " Settings for use of the system's clipboard
 vnoremap <C-c> "+y
@@ -288,20 +292,15 @@ let g:Tex_ViewRule_dvi = 'open -a Preview'
 " ========== automatic syntaxing ============= " 
 " for glsl
 au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl 
+au BufRead,BufNewFile Makefile setfiletype make
 
 set cul
 " Change the cursor shape when entering the insert mode
 
-" if has("autocmd")
-"   au InsertEnter * set nocul
-"   au InsertLeave * set cul
-"   au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-"   au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-"   au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-" endif
-
-
-
+if has("autocmd")
+  au InsertEnter * set nocul
+  au InsertLeave * set cul
+endif
 
 
 " leave insert mode quickly
@@ -359,8 +358,6 @@ nmap <C-X> <Nop>
 "   let g:airline_symbols.paste = '∥'
 "   let g:airline_symbols.whitespace = 'Ξ'
 
-" syntax on 
-" filetype on 
 " au BufNewFile,BufRead * if &syntax == '' | set syntax=cpp | endif
 
 
@@ -387,7 +384,11 @@ set fillchars+=stl:\ ,stlnc:\
 set term=xterm-256color
 set termencoding=utf-8
 
-autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=cpp | endif  
+" for constructor indentation " 
+" ref: http://stackoverflow.com/questions/2288678/vim-indentation-in-c-constructor-initialization-list
+set cino=g4,h4,i0
+
+"autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=cpp | endif  
 
 
 "if exists('$TMUX')
@@ -401,3 +402,35 @@ autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=cpp | endif
 " for constructor indentation "
 " ref: http://stackoverflow.com/questions/2288678/vim-indentation-in-c-constructor-initialization-list
 set cino=g4,h4,i0
+"set syntax=on
+
+"========= Enable Vundle ==========
+" For reference see StackExchange: 
+"  http://vi.stackexchange.com/questions/388/what-is-the-difference-between-the-vim-package-managers
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" more Plugin commands
+" ...
+call vundle#end()            " required
+filetype plugin indent on    " required
+"========= END Enable Vundle ==========
+
+"========= Vim Plug-ins managed by Vundle ==========
+Plugin 'tpope/vim-fugitive'
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+"========= END Vim Plug-ins managed by Vundle ==========
+
+" CtrlP speed up:
+" http://stackoverflow.com/questions/21346068/slow-performance-on-ctrlp-it-doesnt-work-to-ignore-some-folders
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
