@@ -1,1 +1,1 @@
-/home/jui-hsien/term-tools/installer/../config/.vim
+/Users/jui-hsien/term-tools/installer/../config/.vim
