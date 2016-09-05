@@ -26,8 +26,6 @@ echo "Creating symlink for vim directory at $HOME"
 
 ln -sf $CONFIG_PATH/.vim $HOME/.vim
 
-
-
 ## TODO need to use non sudo 
 # sudo apt-get install mercurial meld
 # sudo apt-get install libevent-dev libncurses-dev pkg-config
