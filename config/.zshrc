@@ -54,7 +54,7 @@ plugins=(git cp pj rand-quote history-substring-search)
 
 ## for pj plug-in, reference see:
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/pj/pj.plugin.zsh
-PROJECT_PATHS=(~/code/acoustics ~/code/acoustics/src ~/code/acoustics/work)
+PROJECT_PATHS=(~/code ~/data ~/code/acoustics ~/code/acoustics/src ~/code/acoustics/work)
 
 # User configuration
 
@@ -85,6 +85,13 @@ fi
 
 ## git config
 git config --global core.excludesfile ~/.gitignore_global
+
+## Automatically quote globs in URL and remote references
+## Ref: http://superuser.com/questions/420525/scp-with-zsh-no-matches-found
+__remote_commands=(scp rsync)
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le ${#__remote_commands} ]] && reply=("*") || reply=(http https ftp)'
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
