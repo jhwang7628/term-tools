@@ -52,6 +52,10 @@ ZSH_THEME="blinks"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git cp pj rand-quote history-substring-search)
 
+## for pj plug-in, reference see:
+# https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/pj/pj.plugin.zsh
+PROJECT_PATHS=(~/code/the-wedding-game)
+
 ## dircolors support for ls and grep color print
 if [ -x /usr/bin/dircolors ]; then
     TERM_TOOLS=${HOME}/term-tools
@@ -78,11 +82,6 @@ source ${HOME}/.alias
 if [ -f ${HOME}/.workspace ]; then 
     source ${HOME}/.workspace
 fi
-# source some local config if exists
-if [ -f ${HOME}/.zshrc_local ]; then 
-    source ${HOME}/.zshrc_local
-fi
-
 
 ## git config
 git config --global core.excludesfile ~/.gitignore_global

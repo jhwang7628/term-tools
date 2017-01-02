@@ -1,7 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/haridas/.kde/share/services'
 let g:netrw_dirhist_2='/mnt/backup/mypc/sparksupport-backups/sparksupport-office/backup/home_dir/Desktop/server_pkgs'
 let g:netrw_dirhist_3='/mnt/backup/mypc/sparksupport-backups/sparksupport-office/backup/home_dir/Desktop/projects/Ipmonitoring'
 let g:netrw_dirhist_4='/Users/jui-hsien/code/website'
 let g:netrw_dirhist_5='/Users/jui-hsien/Desktop/canon_tmp/dppm3.15.0-updater.app/Contents/Resources'
+let g:netrw_dirhist_6='/Users/jui-hsien/opt/src/libQGLViewer-2.6.3/QGLViewer/QGLViewer.framework/Versions/2/Headers/QGLViewer'
+let g:netrw_dirhist_7='/Users/jui-hsien/code/the-wedding-game/postbuild.sh'
