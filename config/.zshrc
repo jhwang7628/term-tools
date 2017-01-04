@@ -5,8 +5,12 @@
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="blinks"
-
+# ZSH_THEME="my_blinks"
+if [ -f ${ZSH}/themes/my_blinks.zsh-theme ]; then
+    ZSH_THEME="my_blinks"
+else
+    ZSH_THEME="blinks"
+fi
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
