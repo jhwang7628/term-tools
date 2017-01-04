@@ -28,7 +28,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 # Ref: http://unix.stackexchange.com/questions/9605/how-can-i-detect-if-the-shell-is-controlled-from-ssh
 # To get more colors, use spectrum_ls to list all color code
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    eval my_dir_color='$FG[046]'
+    eval my_dir_color='$FG[034]'
 else
     my_dir_color=yellow
 fi
