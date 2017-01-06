@@ -89,6 +89,7 @@ fi
 
 ## git config
 git config --global core.excludesfile ~/.gitignore_global
+git config --global core.editor "vim"
 
 ## Automatically quote globs in URL and remote references
 ## Ref: http://superuser.com/questions/420525/scp-with-zsh-no-matches-found
