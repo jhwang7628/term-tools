@@ -29,6 +29,8 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 # To get more colors, use spectrum_ls to list all color code
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     eval my_dir_color='$FG[034]'
+elif [ "${DISPLAY}" = "localhost:11.0" ]; then 
+    eval my_dir_color='$FG[034]'
 else
     my_dir_color=yellow
 fi
