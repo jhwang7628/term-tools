@@ -31,6 +31,8 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     eval my_dir_color='$FG[034]'
 elif [ "${DISPLAY}" = "localhost:11.0" ]; then 
     eval my_dir_color='$FG[034]'
+elif [ "${DISPLAY}" = "localhost:10.0" ]; then 
+    eval my_dir_color='$FG[034]'
 else
     my_dir_color=yellow
 fi
