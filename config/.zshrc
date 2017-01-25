@@ -114,7 +114,6 @@ setopt extended_glob # this can do something like rm -- ^*.txt, which removes al
 ## python and matplotlib
 # export MATPLOTLIBRC=${HOME}/term-tools/config
 
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
