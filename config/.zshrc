@@ -1,11 +1,21 @@
 # Path to your oh-my-zsh installation.
   export ZSH=/home/jui-hsien/.oh-my-zsh
 
+# check if remote session is active
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    export THIS_IS_A_REMOTE_SESSION=1
+elif [ "${DISPLAY}" = "localhost:11.0" ]; then 
+    export THIS_IS_A_REMOTE_SESSION=1
+elif [ "${DISPLAY}" = "localhost:10.0" ]; then 
+    export THIS_IS_A_REMOTE_SESSION=1
+else
+    export THIS_IS_A_REMOTE_SESSION=0
+fi
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="my_blinks"
 if [ -f ${ZSH}/themes/my_blinks.zsh-theme ]; then
     ZSH_THEME="my_blinks"
 else
@@ -75,16 +85,16 @@ fi
 ## search paths
 export PYTHONSTARTUP=${HOME}/.pythonstartup
 export PYTHONPATH=${HOME}/opt/lib/python2.7/lib/python:$PYTHONPATH
-export PATH=${HOME}/opt/bin:/usr/local/cuda-7.5/bin:${PATH}
+export PATH=${HOME}/opt/bin:/usr/local/cuda-8.0/bin:${PATH}
 export CPLUS_INCLUDE_PATH=${HOME}/opt/include:${CPLUS_INCLUDE_PATH}
-export LD_LIBRARY_PATH=${HOME}/opt/lib:${HOME}/opt/eigen:/usr/local/cuda-6.5/lib64:/usr/local/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=${HOME}/opt/lib:${HOME}/opt/eigen:/usr/local/cuda-8.0/lib64:/usr/local/lib:${LD_LIBRARY_PATH}
 export LIBRARY_PATH=${HOME}/opt/lib:/usr/local/lib:${LIBRARY_PATH}
 
 ## source auxiliary files
 source $ZSH/oh-my-zsh.sh
 source ${HOME}/.alias
-if [ -f ${HOME}/.workspace ]; then 
-    source ${HOME}/.workspace
+if [ -f ${HOME}/.bashrc_local ]; then 
+    source ${HOME}/.bashrc_local
 fi
 
 ## git config
@@ -97,6 +107,13 @@ __remote_commands=(scp rsync)
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le ${#__remote_commands} ]] && reply=("*") || reply=(http https ftp)'
+
+## custom options
+setopt extended_glob # this can do something like rm -- ^*.txt, which removes all but txt files, or rm -- ^*.(dmg|txt). Can check options by setopt alone
+
+## python and matplotlib
+# export MATPLOTLIBRC=${HOME}/term-tools/config
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

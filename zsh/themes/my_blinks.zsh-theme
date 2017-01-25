@@ -27,18 +27,14 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 # Detect whether ssh is enabled, if yes then change directory colors
 # Ref: http://unix.stackexchange.com/questions/9605/how-can-i-detect-if-the-shell-is-controlled-from-ssh
 # To get more colors, use spectrum_ls to list all color code
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    eval my_dir_color='$FG[034]'
-elif [ "${DISPLAY}" = "localhost:11.0" ]; then 
-    eval my_dir_color='$FG[034]'
-elif [ "${DISPLAY}" = "localhost:10.0" ]; then 
+if [ "${THIS_IS_A_REMOTE_SESSION}" = 1 ]; then
     eval my_dir_color='$FG[034]'
 else
     my_dir_color=yellow
 fi
 
 PROMPT='%{%f%k%b%}
-%{%K{${bkg}}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{${my_dir_color}%K{${bkg}}%}%~%{%B%F{green}%}$(git_prompt_info)%E%{%f%k%b%}
+%{%K{${bkg}}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b${my_dir_color}%K{${bkg}}%}%~%{%B%F{green}%}$(git_prompt_info)%E%{%f%k%b%}
 %{%K{${bkg}}%}$(_prompt_char)%{%K{${bkg}}%} %#%{%f%k%b%} '
 
 RPROMPT='!%{%B%F{cyan}%}%!%{%f%k%b%}'
