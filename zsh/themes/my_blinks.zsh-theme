@@ -1,14 +1,6 @@
 # This theme is adapted from blinks by Douglas Creager:
 # https://github.com/blinks zsh theme
 
-function _prompt_char() {
-  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-    echo "%{%F{blue}%}±%{%f%k%b%}"
-  else
-    echo ' '
-  fi
-}
-
 # This theme works with both the "dark" and "light" variants of the
 # Solarized color schema.  Set the SOLARIZED_THEME variable to one of
 # these two values to choose.  If you don't specify, we'll assume you're
@@ -30,11 +22,10 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 if [ "${THIS_IS_A_REMOTE_SESSION}" = 1 ]; then
     eval my_dir_color='$FG[034]'
 else
-    eval my_dir_color='$FG[003]'
+    eval my_dir_color='$FG[166]'
 fi
-
-PROMPT='%{%f%k%b%}
-%{%K{${bkg}}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b${my_dir_color}%K{${bkg}}%~%{%B%F{green}%}$(git_prompt_info)%E%{%f%k%b%}
-%{%K{${bkg}}%}$(_prompt_char)%{%K{${bkg}}%} %#%{%f%k%b%} '
+PROMPT='%{%f%k%b%} 
+%{%K{${bkg}}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} ${my_dir_color}%~%{$reset_color%} $(git_prompt_info)%E%{%f%k%b%}
+%F{blue}→%{%f%k%b%} '
 
 RPROMPT='!%{%B%F{cyan}%}%!%{%f%k%b%}'
