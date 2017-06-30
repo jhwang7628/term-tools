@@ -236,3 +236,7 @@ if [ -d /usr/local/jdk ]; then
     export JAVA_HOME=/usr/local/jdk
     export PATH=${JAVA_HOME}/bin:${PATH}
 fi 
+
+# matlab
+echo "HELLO"
+alias matlab='/Applications/MATLAB_R2016b.app/Contents/MacOS/MATLAB_maci64 -nosplash -nodesktop'

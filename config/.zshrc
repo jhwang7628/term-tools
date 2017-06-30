@@ -54,7 +54,7 @@ plugins=(git cp pj rand-quote history-substring-search)
 
 ## for pj plug-in, reference see:
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/pj/pj.plugin.zsh
-PROJECT_PATHS=(~/code/the-wedding-game)
+PROJECT_PATHS=(/Users/jui-hsien/Google\ Drive/Stanford/Course/CME338)
 
 ## dircolors support for ls and grep color print
 if [ -x /usr/bin/dircolors ]; then
