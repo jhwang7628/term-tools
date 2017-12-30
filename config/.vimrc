@@ -48,7 +48,7 @@ set matchtime=3
 let mapleader = "`"
 """"
 " Set title to window
-set title 
+set title
 " Dictionary path, from which the words are being looked up.
 set dictionary=/usr/share/dict/words
 
@@ -60,7 +60,7 @@ set backupskip=/tmp/*,/private/tmp/*"
 
 " Enable Mouse
 " set mouse=a
-" Disable Mouse 
+" Disable Mouse
 set mouse=c
 
 "Settings for Searching and Moving
@@ -77,7 +77,7 @@ nnoremap <leader><space> :noh<cr>
 "vnoremap <tab> %
 "
 " short cut for removing trailing white spaces using <F5>
-nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>                   
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 
 " Settings for use of the system's clipboard
@@ -253,7 +253,7 @@ imap <leader>l <ESC>:TagbarToggle<cr>i
 " =========== END Plugin Settings =========="
 "
 "
-" =========== vim-latex suite Settings ===========" 
+" =========== vim-latex suite Settings ==========="
 "
 
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
@@ -282,16 +282,16 @@ let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='pdf'
 " let g:Tex_CompileRule_pdf
 
-" =========== vim-latex suite Settings ===========" 
+" =========== vim-latex suite Settings ==========="
 "
 "
 "
 "
 "
 "
-" ========== automatic syntaxing ============= " 
+" ========== automatic syntaxing ============= "
 " for glsl
-au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl 
+au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
 au BufRead,BufNewFile Makefile setfiletype make
 
 set cul
@@ -317,19 +317,16 @@ endif
 
 " enable smarter tab line in vim-airline
 " let g:airline#extensions#tabline#enabled = 1
+" let g:airline_powerline_fonts = 1
 "
 "
-
-let g:airline_powerline_fonts = 1
-
-
 set t_Co=16
 set background=dark
 colo solarized
-
-let g:airline#extensions#tmuxline#enabled = 0
-autocmd VimEnter * Tmuxline airline_insert 
-autocmd VimEnter * SyntasticToggleMode 
+"
+" let g:airline#extensions#tmuxline#enabled = 0
+autocmd VimEnter * Tmuxline airline_insert
+autocmd VimEnter * SyntasticToggleMode
 
 nmap <leader>sc :SyntasticCheck<CR>
 
@@ -341,7 +338,7 @@ nmap <C-X> <Nop>
 " if !exists('g:airline_symbols')
 "     let g:airline_symbols = {}
 "   endif
-"" 
+""
 ""   " unicode symbols
 "   let g:airline_left_sep = '»'
 "   let g:airline_left_sep = '▶'
@@ -369,7 +366,7 @@ set lazyredraw
 "
 
 
-" For swap files " 
+" For swap files "
 " set backupdir=./.backup,.,/tmp
 " set directory=.,./.backup,/tmp
 
@@ -377,11 +374,11 @@ set backupdir=~/.vim/backup/
 set directory=~/.vim/swap/
 set undodir=~/.vim/undo/
 
-" for constructor indentation " 
+" for constructor indentation "
 " ref: http://stackoverflow.com/questions/2288678/vim-indentation-in-c-constructor-initialization-list
 set cino=g4,h4,i0
 
-"autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=cpp | endif  
+"autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=cpp | endif
 
 "if exists('$TMUX')
 "    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -394,7 +391,7 @@ set cino=g4,h4,i0
 "set syntax=on
 
 "========= Enable Vundle ==========
-" For reference see StackExchange: 
+" For reference see StackExchange:
 "  http://vi.stackexchange.com/questions/388/what-is-the-difference-between-the-vim-package-managers
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -427,3 +424,18 @@ endif
 " disable long line auto break:
 " http://stackoverflow.com/questions/15724919/how-do-i-prevent-vim-from-auto-wrapping-at-column-80
 set tw=0
+
+" Highlight trailing whitespace in the most annoying way possible.
+highlight ExtraWhitespace ctermbg=red guibg=red match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/ autocmd InsertEnter *
+match ExtraWhitespace /\s\+\%#\@<!$/ autocmd InsertLeave * match
+ExtraWhitespace /\s\+$/
+
+" Delete trailing white space
+fun! DeleteTrailingWS()
+	exe "normal mq"
+	%s/\s\+$//ge
+	exe "normal `q"
+	":ShowMarksClearMark
+endfun
+noremap <leader>dw <esc>:call DeleteTrailingWS()<cr>
