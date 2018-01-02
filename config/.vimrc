@@ -425,7 +425,7 @@ endif
 " http://stackoverflow.com/questions/15724919/how-do-i-prevent-vim-from-auto-wrapping-at-column-80
 set tw=0
 
-" Highlight trailing whitespace in the most annoying way possible.                                                                                                                                                                  
+" Highlight trailing whitespace in the most annoying way possible.
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
