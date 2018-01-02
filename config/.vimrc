@@ -425,17 +425,13 @@ endif
 " http://stackoverflow.com/questions/15724919/how-do-i-prevent-vim-from-auto-wrapping-at-column-80
 set tw=0
 
-" Highlight trailing whitespace in the most annoying way possible.
-highlight ExtraWhitespace ctermbg=red guibg=red match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/ autocmd InsertEnter *
-match ExtraWhitespace /\s\+\%#\@<!$/ autocmd InsertLeave * match
-ExtraWhitespace /\s\+$/
+" Highlight trailing whitespace in the most annoying way possible.                                                                                                                                                                  
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
-" Delete trailing white space
-fun! DeleteTrailingWS()
-	exe "normal mq"
-	%s/\s\+$//ge
-	exe "normal `q"
-	":ShowMarksClearMark
-endfun
-noremap <leader>dw <esc>:call DeleteTrailingWS()<cr>
+" Remove trailing whitespace
+" ref: http://vim.wikia.com/wiki/Remove_unwanted_spaces
+nnoremap <silent> <leader>dw :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
