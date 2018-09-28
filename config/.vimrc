@@ -435,3 +435,9 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 " Remove trailing whitespace
 " ref: http://vim.wikia.com/wiki/Remove_unwanted_spaces
 nnoremap <silent> <leader>dw :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+
+" Custom code assist
+map <leader>/ i//##############################################################################<Esc>
+map <leader># i################################################################################<Esc>
+
+set colorcolumn=80

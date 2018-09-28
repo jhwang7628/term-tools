@@ -85,16 +85,16 @@ fi
 ## search paths
 export PYTHONSTARTUP=${HOME}/.pythonstartup
 export PYTHONPATH=${HOME}/opt/lib/python2.7/lib/python:$PYTHONPATH
-export PATH=${HOME}/opt/bin:/usr/local/cuda-8.0/bin:${PATH}
+export PATH=${HOME}/opt/bin:/usr/local/cuda-9.2/bin:${PATH}
 export CPLUS_INCLUDE_PATH=${HOME}/opt/include:${CPLUS_INCLUDE_PATH}
-export LD_LIBRARY_PATH=${HOME}/opt/lib:${HOME}/opt/eigen:/usr/local/cuda-8.0/lib64:/usr/local/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=${HOME}/opt/lib:${HOME}/opt/eigen:/usr/local/cuda-9.2/lib64:/usr/local/lib:${LD_LIBRARY_PATH}
 export LIBRARY_PATH=${HOME}/opt/lib:/usr/local/lib:${LIBRARY_PATH}
 
 ## source auxiliary files
 source $ZSH/oh-my-zsh.sh
 source ${HOME}/.alias
-if [ -f ${HOME}/.bashrc_local ]; then 
-    source ${HOME}/.bashrc_local
+if [ -f ${HOME}/.zshrc_local ]; then 
+    source ${HOME}/.zshrc_local
 fi
 
 ## git config
@@ -138,3 +138,4 @@ setopt extended_glob # this can do something like rm -- ^*.txt, which removes al
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+DISABLE_AUTO_UPDATE=true
