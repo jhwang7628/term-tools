@@ -412,6 +412,7 @@ filetype plugin indent on    " required
 "========= Vim Plug-ins managed by Vundle ==========
 Plugin 'tpope/vim-fugitive'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+Plugin 'scrooloose/nerdcommenter'
 "========= END Vim Plug-ins managed by Vundle ==========
 
 " CtrlP speed up:
