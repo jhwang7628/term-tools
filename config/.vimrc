@@ -35,10 +35,6 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 
-"set relativenumber
-set number
-" set norelativenumber
-
 "set undofile
 set shell=/bin/bash
 set lazyredraw
@@ -96,10 +92,10 @@ set listchars=tab:▸\ ,eol:¬
 
 " Naviagations using keys up/down/left/right
 " Disabling default keys to learn the hjkl
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
 "inoremap <up> <nop>
 "inoremap <down> <nop>
 "inoremap <left> <nop>
@@ -442,3 +438,13 @@ map <leader>/ i//###############################################################
 map <leader># i################################################################################<Esc>
 
 set colorcolumn=80
+
+" Set line number mode automatically
+" https://jeffkreeftmeijer.com/vim-number/
+set number relativenumber
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
