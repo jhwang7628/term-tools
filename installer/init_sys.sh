@@ -7,7 +7,7 @@ CONFIG_PATH=$PWD/../config
 olddir=$ROOT_DIR/dotfiles_old
 files=".alias .pythonstartup .vim startup.m .tmux.conf .vimrc .bashrc .gitignore_global .zshrc"
 
-. ./install_vim_plugins
+. ./install_vim_plugins.sh
 
 if [ ! -d $olddir ]; then
     echo "Creating $olddir for backup of any existing dotfiles in $HOME"
