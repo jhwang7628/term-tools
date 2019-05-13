@@ -40,8 +40,9 @@ set shell=/bin/bash
 set lazyredraw
 set matchtime=3
 
-"Changing Leader Key
-let mapleader = "`"
+"Changing Leader Key to space
+let mapleader = " "
+"let mapleader = ","
 """"
 " Set title to window
 set title
@@ -420,7 +421,7 @@ endif
 
 " disable long line auto break:
 " http://stackoverflow.com/questions/15724919/how-do-i-prevent-vim-from-auto-wrapping-at-column-80
-set tw=0
+" set tw=0
 
 " Highlight trailing whitespace in the most annoying way possible.
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -448,3 +449,8 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
+
+" Set custom key bindings for printing
+" https://howchoo.com/g/nzc1ztu4ztd/custom-key-mappings-vim
+noremap <leader>da o// FIXME debug START<Esc>
+noremap <leader>db o// FIXME debug STOP<Esc>

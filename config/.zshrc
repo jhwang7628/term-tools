@@ -68,7 +68,7 @@ plugins=(git cp pj rand-quote history-substring-search)
 
 ## for pj plug-in, reference see:
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/pj/pj.plugin.zsh
-PROJECT_PATHS=(~/code/acoustics)
+PROJECT_PATHS=(~/code/gpu_wavesolver)
 
 # User configuration
 
