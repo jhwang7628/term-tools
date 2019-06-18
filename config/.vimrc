@@ -452,5 +452,7 @@ augroup END
 
 " Set custom key bindings for printing
 " https://howchoo.com/g/nzc1ztu4ztd/custom-key-mappings-vim
+noremap <leader>dd A // FIXME debug<Esc>
 noremap <leader>da o// FIXME debug START<Esc>
 noremap <leader>db o// FIXME debug STOP<Esc>
+noremap <leader># o//##############################################################################<Esc>
