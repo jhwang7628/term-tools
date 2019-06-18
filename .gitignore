@@ -4,3 +4,5 @@ config/.vim/swap
 config/.vim/backup
 config/.vim/undo
 
+dotfiles_old
+
