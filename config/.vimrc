@@ -45,7 +45,7 @@ set lazyredraw
 set matchtime=3
 
 "Changing Leader Key
-let mapleader = "`"
+let mapleader = " "
 """"
 " Set title to window
 set title 
@@ -437,4 +437,23 @@ endif
 
 " disable long line auto break:
 " http://stackoverflow.com/questions/15724919/how-do-i-prevent-vim-from-auto-wrapping-at-column-80
-set tw=0
+set tw=80
+set colorcolumn=80
+
+" Highlight trailing whitespace in the most annoying way possible.
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+
+" Remove trailing whitespace
+" ref: http://vim.wikia.com/wiki/Remove_unwanted_spaces
+nnoremap <silent> <leader>dw :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+
+" Set custom key bindings for printing
+" https://howchoo.com/g/nzc1ztu4ztd/custom-key-mappings-vim
+noremap <leader>dd A // FIXME debug<Esc>
+noremap <leader>da o// FIXME debug START<Esc>
+noremap <leader>db o// FIXME debug STOP<Esc>
+noremap <leader># o//##############################################################################<Esc>
