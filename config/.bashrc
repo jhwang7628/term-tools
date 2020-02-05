@@ -165,12 +165,12 @@ if ! shopt -oq posix; then
 fi
 
 export PYTHONSTARTUP=${HOME}/.pythonstartup
-export PYTHONPATH=${HOME}/opt/lib/python2.7/lib/python:$PYTHONPATH
-export PATH=${HOME}/bin:${HOME}/opt/bin:/usr/local/cuda-7.5/bin:${PATH}
-export CPLUS_INCLUDE_PATH=${HOME}/opt/include:${CPLUS_INCLUDE_PATH}
-# export INCLUDE=${HOME}/opt/include:${INCLUDE}
-export LD_LIBRARY_PATH=${HOME}/opt/lib:${HOME}/opt/eigen:/usr/local/cuda-6.5/lib64:/usr/local/lib:${LD_LIBRARY_PATH}
-export LIBRARY_PATH=${HOME}/opt/lib:/usr/local/lib:${LIBRARY_PATH}
+# export PYTHONPATH=${HOME}/opt/lib/python2.7/lib/python:$PYTHONPATH
+# export PATH=${HOME}/bin:${HOME}/opt/bin:/usr/local/cuda-7.5/bin:${PATH}
+# export CPLUS_INCLUDE_PATH=${HOME}/opt/include:${CPLUS_INCLUDE_PATH}
+# # export INCLUDE=${HOME}/opt/include:${INCLUDE}
+# export LD_LIBRARY_PATH=${HOME}/opt/lib:${HOME}/opt/eigen:/usr/local/cuda-6.5/lib64:/usr/local/lib:${LD_LIBRARY_PATH}
+# export LIBRARY_PATH=${HOME}/opt/lib:/usr/local/lib:${LIBRARY_PATH}
 # export LDFLAGS=${LDFLAGS}:-L${HOME}/opt/lib
 
 # export LIBS=${LD_LIBRARY_PATH}
