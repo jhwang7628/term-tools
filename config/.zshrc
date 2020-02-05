@@ -54,7 +54,7 @@ plugins=(git cp pj rand-quote history-substring-search)
 
 ## for pj plug-in, reference see:
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/pj/pj.plugin.zsh
-PROJECT_PATHS=(/Users/jui-hsien/Google\ Drive/Stanford/Course/CME338)
+PROJECT_PATHS=(${HOME}/code/RigDynamics)
 
 ## dircolors support for ls and grep color print
 if [ -x /usr/bin/dircolors ]; then
@@ -117,3 +117,4 @@ zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+source ${HOME}/.bash_profile
