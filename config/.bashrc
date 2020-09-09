@@ -122,7 +122,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Enables dircolors for solarized
-TERM_TOOLS=${HOME}/term-tools
+TERM_TOOLS=${HOME}/code/term-tools
 eval `dircolors $TERM_TOOLS/config/.dircolors`
 # $TERM_TOOLS/config/dircolors-solarized/gnome-terminal-colors-solarized/set_dark.sh
 
