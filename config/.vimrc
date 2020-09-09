@@ -2,8 +2,8 @@
 
 " Pathogen settings.
 filetype off
-call pathogen#runtime_append_all_bundles()
 call pathogen#infect()
+call pathogen#runtime_append_all_bundles()
 Helptags
 filetype plugin indent on
 
@@ -201,7 +201,6 @@ if has("gui_running")
     set listchars=tab:▸\ ,eol:¬         " Invisibles using the Textmate style
 else
     set t_Co=256
-    colorschem badwolf
     "colorschem torte
 endif
 
@@ -319,7 +318,7 @@ endif
 "
 set t_Co=16
 set background=dark
-colo solarized
+colorscheme solarized
 "
 " let g:airline#extensions#tmuxline#enabled = 0
 autocmd VimEnter * Tmuxline airline_insert
@@ -442,7 +441,7 @@ set colorcolumn=80
 
 " Set line number mode automatically
 " https://jeffkreeftmeijer.com/vim-number/
-set number relativenumber
+set number
 
 augroup numbertoggle
   autocmd!
