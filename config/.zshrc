@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/jui-hsien/.oh-my-zsh
+export ZSH=${HOME}/.oh-my-zsh
 
 # check if remote session is active
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
@@ -74,7 +74,7 @@ PROJECT_PATHS=(~/code/gpu_wavesolver)
 
 ## dircolors support for ls and grep color print
 if [ -x /usr/bin/dircolors ]; then
-    TERM_TOOLS=${HOME}/term-tools
+    TERM_TOOLS=${HOME}/code/term-tools
     eval `dircolors $TERM_TOOLS/config/.dircolors`
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
