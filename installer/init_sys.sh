@@ -23,6 +23,9 @@ for file in $files; do
 done
 
 echo "Backup old vim directory to $olddir" 
+if [ -d $olddir/.vim ]; then
+    rm -rf $olddir/.vim
+fi
 mv $HOME/.vim $olddir/
 echo "Creating symlink for vim directory at $HOME" 
 
