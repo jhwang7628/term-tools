@@ -443,12 +443,6 @@ set colorcolumn=80
 " https://jeffkreeftmeijer.com/vim-number/
 set number
 
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
-
 " Set custom key bindings for printing
 " https://howchoo.com/g/nzc1ztu4ztd/custom-key-mappings-vim
 noremap <leader>dd A // FIXME debug<Esc>
