@@ -7,6 +7,7 @@ call pathogen#runtime_append_all_bundles()
 Helptags
 filetype plugin indent on
 
+
 " Make vim incompatbile to vi.
 set nocompatible
 set modelines=0
@@ -289,6 +290,9 @@ let g:Tex_MultipleCompileFormats='pdf'
 " for glsl
 au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
 au BufRead,BufNewFile Makefile setfiletype make
+autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2
+autocmd Filetype css setlocal tabstop=2 shiftwidth=2
+autocmd Filetype html setlocal tabstop=2 shiftwidth=2
 
 set cul
 " Change the cursor shape when entering the insert mode
