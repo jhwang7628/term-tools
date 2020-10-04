@@ -240,3 +240,7 @@ fi
 # matlab
 echo "HELLO"
 alias matlab='/Applications/MATLAB_R2016b.app/Contents/MacOS/MATLAB_maci64 -nosplash -nodesktop'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

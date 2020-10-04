@@ -54,7 +54,7 @@ plugins=(git cp pj rand-quote history-substring-search)
 
 ## for pj plug-in, reference see:
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/pj/pj.plugin.zsh
-PROJECT_PATHS=(${HOME}/code/RigDynamics)
+PROJECT_PATHS=(${HOME}/code/Lagrange)
 
 ## dircolors support for ls and grep color print
 if [ -x /usr/bin/dircolors ]; then
@@ -75,6 +75,11 @@ export PYTHONSTARTUP=${HOME}/.pythonstartup
 # export CPLUS_INCLUDE_PATH=${HOME}/opt/include:${CPLUS_INCLUDE_PATH}
 # export LD_LIBRARY_PATH=${HOME}/opt/lib:${HOME}/opt/eigen:/usr/local/cuda-6.5/lib64:/usr/local/lib:${LD_LIBRARY_PATH}
 # export LIBRARY_PATH=${HOME}/opt/lib:/usr/local/lib:${LIBRARY_PATH}
+
+# Disable URL escape
+# https://github.com/ohmyzsh/ohmyzsh/issues/6654
+# https://github.com/ohmyzsh/ohmyzsh/issues/5499
+DISABLE_MAGIC_FUNCTIONS=true
 
 ## source auxiliary files
 source $ZSH/oh-my-zsh.sh
@@ -118,3 +123,6 @@ zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le 
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ${HOME}/.bash_profile
+source ${HOME}/.zshrc_local
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

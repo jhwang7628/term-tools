@@ -456,4 +456,4 @@ nnoremap <silent> <leader>dw :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar
 noremap <leader>dd A // FIXME debug<Esc>
 noremap <leader>da o// FIXME debug START<Esc>
 noremap <leader>db o// FIXME debug STOP<Esc>
-noremap <leader># o//##############################################################################<Esc>
+noremap <leader># o//##################################################################################################<Esc>
