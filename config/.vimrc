@@ -84,7 +84,7 @@ vnoremap <C-c> "+y
 
 " Make Vim to handle long lines nicely.
 set wrap
-set textwidth=79
+set textwidth=100
 set formatoptions=qrn1
 "set colorcolumn=79
 
@@ -293,6 +293,7 @@ au BufRead,BufNewFile Makefile setfiletype make
 autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2
 autocmd Filetype css setlocal tabstop=2 shiftwidth=2
 autocmd Filetype html setlocal tabstop=2 shiftwidth=2
+autocmd Filetype ts setlocal tabstop=2 shiftwidth=2
 
 set cul
 " Change the cursor shape when entering the insert mode
@@ -438,10 +439,8 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 nnoremap <silent> <leader>dw :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 " Custom code assist
-map <leader>/ i//##############################################################################<Esc>
-map <leader># i################################################################################<Esc>
-
-set colorcolumn=80
+map <leader>/ i//##################################################################################################<Esc>
+map <leader># i####################################################################################################<Esc>
 
 " Set line number mode automatically
 " https://jeffkreeftmeijer.com/vim-number/
@@ -449,7 +448,11 @@ set number
 
 " Set custom key bindings for printing
 " https://howchoo.com/g/nzc1ztu4ztd/custom-key-mappings-vim
-noremap <leader>dd A // FIXME debug<Esc>
-noremap <leader>da o// FIXME debug START<Esc>
-noremap <leader>db o// FIXME debug STOP<Esc>
-noremap <leader># o//##############################################################################<Esc>
+noremap <leader>dd A ## FIXME debug<Esc>
+noremap <leader>da o## FIXME debug START<Esc>
+noremap <leader>db o## FIXME debug STOP<Esc>
+noremap <leader># o####################################################################################################<Esc>
+
+set tw=100
+set cc=100
+set smarttab

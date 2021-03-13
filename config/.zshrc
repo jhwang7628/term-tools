@@ -139,3 +139,25 @@ setopt extended_glob # this can do something like rm -- ^*.txt, which removes al
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 DISABLE_AUTO_UPDATE=true
+
+# Directory stack tricks
+# ref: http://zsh.sourceforge.net/Intro/intro_6.html#:~:text=The%20pushd%20command%20puts%20the,stack%20and%20changes%20to%20it.&text=Note%20that%20%3D2%20expanded%20to,third%20directory%20in%20the%20list.
+DIRSTACKSIZE=8
+setopt autopushd pushdminus pushdsilent pushdtohome
+alias dirs='dirs -v'
+
+## >>> conda initialize >>>
+## !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/home/juiwang/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/home/juiwang/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+#        . "/home/juiwang/opt/anaconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/home/juiwang/opt/anaconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+## <<< conda initialize <<<
+
