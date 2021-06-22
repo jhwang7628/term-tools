@@ -13,3 +13,6 @@
 [submodule "config/.vim/bundle/vim-windowswap"]
 	path = config/.vim/bundle/vim-windowswap
 	url = https://github.com/wesQ3/vim-windowswap.git
+[submodule "config/.vim/bundle/typescript-vim"]
+	path = config/.vim/bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
