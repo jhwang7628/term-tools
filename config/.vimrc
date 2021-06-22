@@ -422,6 +422,8 @@ let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+let g:ctrlp_match_window = 'min:1,max:10,results:30' " 30 results in max 10 window
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g'
 
 " disable long line auto break:
 " http://stackoverflow.com/questions/15724919/how-do-i-prevent-vim-from-auto-wrapping-at-column-80
@@ -448,11 +450,19 @@ set number
 
 " Set custom key bindings for printing
 " https://howchoo.com/g/nzc1ztu4ztd/custom-key-mappings-vim
-noremap <leader>dd A ## FIXME debug<Esc>
-noremap <leader>da o## FIXME debug START<Esc>
-noremap <leader>db o## FIXME debug STOP<Esc>
+noremap <leader>dd A // FIXME debug<Esc>
+noremap <leader>da o// FIXME debug START<Esc>
+noremap <leader>db o// FIXME debug STOP<Esc>
 noremap <leader># o####################################################################################################<Esc>
 
 set tw=100
 set cc=100
 set smarttab
+
+" ctags stuff
+set tags+=$HOME/.ctags
+set tags+=./tags;$HOME
+
+" ctags - ctrlp integration
+nnoremap <leader>t :CtrlPTag<cr>
+

@@ -54,3 +54,6 @@ Thumbs.db
 
 # Python #
 *.pyc
+
+# CTags
+tags
