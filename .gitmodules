@@ -16,3 +16,6 @@
 [submodule "config/.vim/bundle/typescript-vim"]
 	path = config/.vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "config/.vim/bundle/vim-gutentags"]
+	path = config/.vim/bundle/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags.git
