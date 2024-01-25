@@ -54,3 +54,11 @@ Thumbs.db
 
 # Python #
 *.pyc
+
+# CTags
+tags
+tags.lock
+tags.temp
+
+# Blink tmp cache
+tmp_cache/

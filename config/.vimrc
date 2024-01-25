@@ -2,10 +2,11 @@
 
 " Pathogen settings.
 filetype off
-call pathogen#runtime_append_all_bundles()
 call pathogen#infect()
+call pathogen#runtime_append_all_bundles()
 Helptags
 filetype plugin indent on
+
 
 " Make vim incompatbile to vi.
 set nocompatible
@@ -83,7 +84,7 @@ vnoremap <C-c> "+y
 
 " Make Vim to handle long lines nicely.
 set wrap
-set textwidth=79
+set textwidth=100
 set formatoptions=qrn1
 "set colorcolumn=79
 
@@ -201,7 +202,6 @@ if has("gui_running")
     set listchars=tab:▸\ ,eol:¬         " Invisibles using the Textmate style
 else
     set t_Co=256
-    colorschem badwolf
     "colorschem torte
 endif
 
@@ -290,6 +290,10 @@ let g:Tex_MultipleCompileFormats='pdf'
 " for glsl
 au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
 au BufRead,BufNewFile Makefile setfiletype make
+autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2
+autocmd Filetype css setlocal tabstop=2 shiftwidth=2
+autocmd Filetype html setlocal tabstop=2 shiftwidth=2
+autocmd Filetype ts setlocal tabstop=2 shiftwidth=2
 
 set cul
 " Change the cursor shape when entering the insert mode
@@ -313,13 +317,13 @@ endif
 
 
 " enable smarter tab line in vim-airline
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1
 "
 "
 set t_Co=16
 set background=dark
-colo solarized
+colorscheme solarized
 "
 " let g:airline#extensions#tmuxline#enabled = 0
 autocmd VimEnter * Tmuxline airline_insert
@@ -412,13 +416,6 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 Plugin 'scrooloose/nerdcommenter'
 "========= END Vim Plug-ins managed by Vundle ==========
 
-" CtrlP speed up:
-" http://stackoverflow.com/questions/21346068/slow-performance-on-ctrlp-it-doesnt-work-to-ignore-some-folders
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-
 " disable long line auto break:
 " http://stackoverflow.com/questions/15724919/how-do-i-prevent-vim-from-auto-wrapping-at-column-80
 " set tw=0
@@ -435,24 +432,52 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 nnoremap <silent> <leader>dw :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 " Custom code assist
-map <leader>/ i//##############################################################################<Esc>
-map <leader># i################################################################################<Esc>
-
-set colorcolumn=80
+map <leader>/ i//##################################################################################################<Esc>
+map <leader># i####################################################################################################<Esc>
 
 " Set line number mode automatically
 " https://jeffkreeftmeijer.com/vim-number/
-set number relativenumber
-
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
+set number
 
 " Set custom key bindings for printing
 " https://howchoo.com/g/nzc1ztu4ztd/custom-key-mappings-vim
 noremap <leader>dd A // FIXME debug<Esc>
 noremap <leader>da o// FIXME debug START<Esc>
 noremap <leader>db o// FIXME debug STOP<Esc>
-noremap <leader># o//##############################################################################<Esc>
+noremap <leader># o####################################################################################################<Esc>
+
+set tw=100
+set cc=100
+set smarttab
+
+" ctags stuff
+set tags+=$HOME/.ctags
+set tags+=./tags;$HOME
+
+" ctags - ctrlp integration
+nnoremap <leader>t :CtrlPTag<cr>
+
+" speedup ctrlp using pymatch
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
+" Set delay to prevent extra search
+let g:ctrlp_lazy_update = 350
+" Do not clear filenames cache, to improve CtrlP startup
+" You can manualy clear it by <F5>
+let g:ctrlp_clear_cache_on_exit = 0
+" Set no file limit, we are building a big project
+let g:ctrlp_max_files = 0
+" If ag is available use it as filename list generator instead of 'find'
+if executable("ag")
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g --ignore ''build'' ""'
+endif
+
+" CtrlP speed up:
+" http://stackoverflow.com/questions/21346068/slow-performance-on-ctrlp-it-doesnt-work-to-ignore-some-folders
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+"if executable('ag')
+"    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+"endif
+"let g:ctrlp_match_window = 'min:1,max:10,results:30' " 30 results in max 10 window
+

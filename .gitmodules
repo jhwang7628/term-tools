@@ -1,0 +1,21 @@
+[submodule "config/.vim/bundle/Vundle.vim"]
+	path = config/.vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "config/.vim/bundle/ctrlp.vim"]
+	path = config/.vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "config/.vim/bundle/nerdcommenter"]
+	path = config/.vim/bundle/nerdcommenter
+	url = https://github.com/preservim/nerdcommenter.git
+[submodule "config/.vim/bundle/vim-colors-solarized"]
+	path = config/.vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "config/.vim/bundle/vim-windowswap"]
+	path = config/.vim/bundle/vim-windowswap
+	url = https://github.com/wesQ3/vim-windowswap.git
+[submodule "config/.vim/bundle/typescript-vim"]
+	path = config/.vim/bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "config/.vim/bundle/vim-gutentags"]
+	path = config/.vim/bundle/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags.git

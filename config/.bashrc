@@ -122,7 +122,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Enables dircolors for solarized
-TERM_TOOLS=${HOME}/term-tools
+TERM_TOOLS=${HOME}/code/term-tools
 eval `dircolors $TERM_TOOLS/config/.dircolors`
 # $TERM_TOOLS/config/dircolors-solarized/gnome-terminal-colors-solarized/set_dark.sh
 
@@ -221,3 +221,19 @@ if [ -d /usr/local/jdk ]; then
     export JAVA_HOME=/usr/local/jdk
     export PATH=${JAVA_HOME}/bin:${PATH}
 fi 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
