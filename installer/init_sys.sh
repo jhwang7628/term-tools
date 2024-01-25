@@ -15,24 +15,25 @@ if [ ! -d $olddir ]; then
     echo "...done"
 fi
 
-echo "Moving any existing dotfiles for $HOME to $olddir" 
+echo "Moving any existing dotfiles for $HOME to $olddir"
 for file in $files; do
     mv $HOME/$file $olddir
     echo "Creating symlink to $file in home directory."
     ln -sf $CONFIG_PATH/$file $HOME/$file
 done
 
-echo "Backup old vim directory to $olddir" 
+echo "Backup old vim directory to $olddir"
 if [ -d $olddir/.vim ]; then
     rm -rf $olddir/.vim
 fi
 mv $HOME/.vim $olddir/
-echo "Creating symlink for vim directory at $HOME" 
+echo "Creating symlink for vim directory at $HOME"
 
 ln -sf $CONFIG_PATH/.vim $HOME/.vim
+ln -s ${CONFIG_PATH}/mpv ${HOME}/.config/
 
 
 
-## TODO need to use non sudo 
+## TODO need to use non sudo
 # sudo apt-get install mercurial meld
 # sudo apt-get install libevent-dev libncurses-dev pkg-config
