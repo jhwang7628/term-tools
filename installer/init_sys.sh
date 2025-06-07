@@ -4,6 +4,9 @@ PWD=`pwd`
 ROOT_DIR=$PWD/..
 CONFIG_PATH=$PWD/../config
 
+sudo apt-get install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 olddir=$ROOT_DIR/dotfiles_old
 files=".alias .pythonstartup .vim startup.m .tmux.conf .vimrc .bashrc .gitignore_global .zshrc"
 
@@ -31,8 +34,6 @@ echo "Creating symlink for vim directory at $HOME"
 
 ln -sf $CONFIG_PATH/.vim $HOME/.vim
 ln -s ${CONFIG_PATH}/mpv ${HOME}/.config/
-
-
 
 ## TODO need to use non sudo
 # sudo apt-get install mercurial meld
