@@ -38,3 +38,7 @@ ln -s ${CONFIG_PATH}/mpv ${HOME}/.config/
 ## TODO need to use non sudo
 # sudo apt-get install mercurial meld
 # sudo apt-get install libevent-dev libncurses-dev pkg-config
+
+
+git config --global user.name "Jui-Hsien Wang"
+git config --global user.email "juiwang.cs@gmail.com"
