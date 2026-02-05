@@ -8,7 +8,7 @@ sudo apt-get install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 olddir=$ROOT_DIR/dotfiles_old
-files=".alias .pythonstartup .vim startup.m .tmux.conf .vimrc .bashrc .gitignore_global .zshrc"
+files=(".alias" ".pythonstartup" ".vim" "startup.m" ".tmux.conf" ".vimrc" ".bashrc" ".gitignore_global" ".zshrc")
 
 . ./install_vim_plugins.sh
 
@@ -19,10 +19,12 @@ if [ ! -d $olddir ]; then
 fi
 
 echo "Moving any existing dotfiles for $HOME to $olddir"
-for file in $files; do
-    mv $HOME/$file $olddir
+for file in "${files[@]}"; do
+    if [ -f "$HOME/$file" ] || [ -d "$HOME/$file" ]; then
+        mv "$HOME/$file" "$olddir"
+    fi
     echo "Creating symlink to $file in home directory."
-    ln -sf $CONFIG_PATH/$file $HOME/$file
+    ln -sf "$CONFIG_PATH/$file" "$HOME/$file"
 done
 
 echo "Backup old vim directory to $olddir"
